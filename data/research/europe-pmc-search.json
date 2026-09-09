@@ -1,0 +1,821 @@
+[
+  {
+    "compound": "testosterone cypionate",
+    "query": "testosterone cypionate AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=testosterone%20cypionate%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:39.650Z",
+    "hitCount": 251,
+    "results": [
+      {
+        "id": "42292725",
+        "source": "MED",
+        "title": "Individualizing Injectable Testosterone Replacement Therapy in Primary Care: Pharmacokinetics, Symptom Stability, Safety Monitoring, and Injection Frequency.",
+        "doi": "10.7759/cureus.110570",
+        "pmcid": "PMC13262958",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41898445",
+        "source": "MED",
+        "title": "Anabolic-Androgenic Steroids Revisited: Structural Biology, Receptor Signaling, and Mechanisms of Anabolic-Androgenic Dissociation.",
+        "doi": "10.3390/ijms27062581",
+        "pmcid": "PMC13026150",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41452771",
+        "source": "MED",
+        "title": "Effect of Testosterone Therapy on Cytochrome P450 3A and P-Glycoprotein Activities Using Midazolam and Digoxin as Probe Substrates Among Transgender Adults.",
+        "doi": "10.1002/phar.70093",
+        "pmcid": "PMC12863264",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41221782",
+        "source": "MED",
+        "title": "A systematic review of transgender male rodent model methodology.",
+        "doi": "10.1002/ame2.70088",
+        "pmcid": "PMC12746192",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42450305",
+        "source": "MED",
+        "title": "Circulating Markers of Cardiovascular Health in Hypogonadism Before and After Testosterone Therapy: Molecular Aspects and Formulation Comparison.",
+        "doi": "10.3390/ijms27136035",
+        "pmcid": "PMC13362008",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41562957",
+        "source": "MED",
+        "title": "Treatment of Symptomatic Male Hypogonadism with New Oral Testosterone Therapies: A Comparative Review of Jatenzo, Tlando, and Kyzatrex.",
+        "doi": "10.3390/medicines13010001",
+        "pmcid": "PMC12821475",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41678706",
+        "source": "MED",
+        "title": "Care of Patients with Male Hypogonadism: A Joint Position Statement from the Brazilian Society of Endocrinology and Metabolism (SBEM), the Brazilian Society of Urology (SBU), and the Brazilian Association for Sexual Medicine and Health (ABEMSS).",
+        "doi": "10.1590/s1677-5538.ibju.2025.0610",
+        "pmcid": "PMC13124176",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41869035",
+        "source": "MED",
+        "title": "Non-medical use of exogenous testosterone and anabolic-androgenic substances in young men: health, psychological, and fertility consequences.",
+        "doi": "10.3389/fendo.2026.1781416",
+        "pmcid": "PMC12999365",
+        "year": "2026",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "testosterone enanthate",
+    "query": "testosterone enanthate AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=testosterone%20enanthate%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:39.867Z",
+    "hitCount": 176,
+    "results": [
+      {
+        "id": "42292725",
+        "source": "MED",
+        "title": "Individualizing Injectable Testosterone Replacement Therapy in Primary Care: Pharmacokinetics, Symptom Stability, Safety Monitoring, and Injection Frequency.",
+        "doi": "10.7759/cureus.110570",
+        "pmcid": "PMC13262958",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41898445",
+        "source": "MED",
+        "title": "Anabolic-Androgenic Steroids Revisited: Structural Biology, Receptor Signaling, and Mechanisms of Anabolic-Androgenic Dissociation.",
+        "doi": "10.3390/ijms27062581",
+        "pmcid": "PMC13026150",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42450305",
+        "source": "MED",
+        "title": "Circulating Markers of Cardiovascular Health in Hypogonadism Before and After Testosterone Therapy: Molecular Aspects and Formulation Comparison.",
+        "doi": "10.3390/ijms27136035",
+        "pmcid": "PMC13362008",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41221782",
+        "source": "MED",
+        "title": "A systematic review of transgender male rodent model methodology.",
+        "doi": "10.1002/ame2.70088",
+        "pmcid": "PMC12746192",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41869035",
+        "source": "MED",
+        "title": "Non-medical use of exogenous testosterone and anabolic-androgenic substances in young men: health, psychological, and fertility consequences.",
+        "doi": "10.3389/fendo.2026.1781416",
+        "pmcid": "PMC12999365",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40925340",
+        "source": "MED",
+        "title": "Detection of Anabolic Androgenic Steroids and Steroid Esters-Comparing Dried Blood Spots Collection Devices and Urine Samples.",
+        "doi": "10.1002/dta.3950",
+        "pmcid": "PMC12689249",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41452771",
+        "source": "MED",
+        "title": "Effect of Testosterone Therapy on Cytochrome P450 3A and P-Glycoprotein Activities Using Midazolam and Digoxin as Probe Substrates Among Transgender Adults.",
+        "doi": "10.1002/phar.70093",
+        "pmcid": "PMC12863264",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41522318",
+        "source": "MED",
+        "title": "Preserving spermatogenesis in testosterone deficiency: innovations in replacement and stimulatory therapies.",
+        "doi": "10.21037/tau-2025-480",
+        "pmcid": "PMC12779434",
+        "year": "2025",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "nandrolone decanoate",
+    "query": "nandrolone decanoate AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=nandrolone%20decanoate%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:40.144Z",
+    "hitCount": 47,
+    "results": [
+      {
+        "id": "41898445",
+        "source": "MED",
+        "title": "Anabolic-Androgenic Steroids Revisited: Structural Biology, Receptor Signaling, and Mechanisms of Anabolic-Androgenic Dissociation.",
+        "doi": "10.3390/ijms27062581",
+        "pmcid": "PMC13026150",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40925340",
+        "source": "MED",
+        "title": "Detection of Anabolic Androgenic Steroids and Steroid Esters-Comparing Dried Blood Spots Collection Devices and Urine Samples.",
+        "doi": "10.1002/dta.3950",
+        "pmcid": "PMC12689249",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41869035",
+        "source": "MED",
+        "title": "Non-medical use of exogenous testosterone and anabolic-androgenic substances in young men: health, psychological, and fertility consequences.",
+        "doi": "10.3389/fendo.2026.1781416",
+        "pmcid": "PMC12999365",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40861228",
+        "source": "MED",
+        "title": "The efficacy and safety of androgen analog oxandrolone in improving clinical outcomes in burn patients: a systematic review and meta-analysis of randomized controlled trials.",
+        "doi": "10.3389/fmed.2025.1485474",
+        "pmcid": "PMC12370634",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "38344525",
+        "source": "MED",
+        "title": "Social Interest Data as a Proxy for Off-Label Performance-Enhancing Drug Use: Implications and Clinical Considerations.",
+        "doi": "10.7759/cureus.52011",
+        "pmcid": "PMC10854362",
+        "year": "2024",
+        "openAccess": "Y"
+      },
+      {
+        "id": "33187340",
+        "source": "MED",
+        "title": "Nandrolone Decanoate: Use, Abuse and Side Effects.",
+        "doi": "10.3390/medicina56110606",
+        "pmcid": "PMC7696474",
+        "year": "2020",
+        "openAccess": "Y"
+      },
+      {
+        "id": "30689637",
+        "source": "MED",
+        "title": "Nandrolone decanoate administration does not attenuate muscle atrophy during a short period of disuse.",
+        "doi": "10.1371/journal.pone.0210823",
+        "pmcid": "PMC6349315",
+        "year": "2019",
+        "openAccess": "Y"
+      },
+      {
+        "id": "36644692",
+        "source": "MED",
+        "title": "Anabolic-androgenic steroids: How do they work and what are the risks?",
+        "doi": "10.3389/fendo.2022.1059473",
+        "pmcid": "PMC9837614",
+        "year": "2022",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "nandrolone phenylpropionate",
+    "query": "nandrolone phenylpropionate AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=nandrolone%20phenylpropionate%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:40.382Z",
+    "hitCount": 12,
+    "results": [
+      {
+        "id": "41898445",
+        "source": "MED",
+        "title": "Anabolic-Androgenic Steroids Revisited: Structural Biology, Receptor Signaling, and Mechanisms of Anabolic-Androgenic Dissociation.",
+        "doi": "10.3390/ijms27062581",
+        "pmcid": "PMC13026150",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40925340",
+        "source": "MED",
+        "title": "Detection of Anabolic Androgenic Steroids and Steroid Esters-Comparing Dried Blood Spots Collection Devices and Urine Samples.",
+        "doi": "10.1002/dta.3950",
+        "pmcid": "PMC12689249",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42511819",
+        "source": "MED",
+        "title": "Repurposing FDA-Approved Drugs as Nav1.7 Channel Modulators: An Integrated Structure-Based Virtual Screening and Molecular Dynamics Study.",
+        "doi": "10.3390/ijms27146476",
+        "pmcid": "PMC13410281",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "38344525",
+        "source": "MED",
+        "title": "Social Interest Data as a Proxy for Off-Label Performance-Enhancing Drug Use: Implications and Clinical Considerations.",
+        "doi": "10.7759/cureus.52011",
+        "pmcid": "PMC10854362",
+        "year": "2024",
+        "openAccess": "Y"
+      },
+      {
+        "id": "37443939",
+        "source": "MED",
+        "title": "Structural Changes in the Skeletal Muscle of Pigs after Long-Term Administration of Testosterone, Nandrolone and a Combination of the Two.",
+        "doi": "10.3390/ani13132141",
+        "pmcid": "PMC10339938",
+        "year": "2023",
+        "openAccess": "Y"
+      },
+      {
+        "id": "33672087",
+        "source": "MED",
+        "title": "Medicinal Use of Testosterone and Related Steroids Revisited.",
+        "doi": "10.3390/molecules26041032",
+        "pmcid": "PMC7919692",
+        "year": "2021",
+        "openAccess": "Y"
+      },
+      {
+        "id": "35035874",
+        "source": "MED",
+        "title": "Recent advancement in the treatment of boys and adolescents with hypogonadism.",
+        "doi": "10.1177/20420188211065660",
+        "pmcid": "PMC8753232",
+        "year": "2022",
+        "openAccess": "Y"
+      },
+      {
+        "id": "32448030",
+        "source": "MED",
+        "title": "Androgen Treatment in Adolescent Males With Hypogonadism.",
+        "doi": "10.1177/1557988320922443",
+        "pmcid": "PMC7249582",
+        "year": "2020",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "human chorionic gonadotropin",
+    "query": "human chorionic gonadotropin AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=human%20chorionic%20gonadotropin%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:40.616Z",
+    "hitCount": 1141,
+    "results": [
+      {
+        "id": "42506338",
+        "source": "MED",
+        "title": "Empty Follicle Syndrome: Current Therapeutic Approaches and the Role of Triggering Agents in Assisted Reproductive Technology.",
+        "doi": "10.3390/medsci14030369",
+        "pmcid": "PMC13414374",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41983359",
+        "source": "MED",
+        "title": "Lean Polycystic Ovarian Syndrome Has Better Responses toRecombinant Follicle-Stimulating Hormone Compared to ObesePCOS during Ovarian Stimulation for &lt;i&gt;In Vitro&lt;/i&gt; Fertilization:A Cross-Sectional Study.",
+        "doi": "10.22074/ijfs.2025.2023851.1632",
+        "pmcid": "PMC13080712",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41407594",
+        "source": "MED",
+        "title": "Gestational trophoblastic diseases and neonatal choriocarcinoma.",
+        "doi": "10.1016/j.bulcan.2025.10.007",
+        "year": "2026",
+        "openAccess": "N"
+      },
+      {
+        "id": "41473565",
+        "source": "MED",
+        "title": "Reviewing the 36-hour trigger rule through a global lens.",
+        "doi": "10.1016/j.xfre.2025.10.007",
+        "pmcid": "PMC12746874",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42100720",
+        "source": "MED",
+        "title": "The influence of rosmarinic acid on male reproductive health: Biological mechanisms and clinical prospects.",
+        "doi": "10.1016/j.bbrep.2026.102610",
+        "pmcid": "PMC13147803",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40674571",
+        "source": "MED",
+        "title": "Etonogestrel implant for LH suppression in a novel DuoStim ovarian stimulation protocol using overlapping doses of corifollitropin alfa for social egg freezing: a case report.",
+        "doi": "10.5935/1518-0557.20250033",
+        "pmcid": "PMC12469500",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41522318",
+        "source": "MED",
+        "title": "Preserving spermatogenesis in testosterone deficiency: innovations in replacement and stimulatory therapies.",
+        "doi": "10.21037/tau-2025-480",
+        "pmcid": "PMC12779434",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42127455",
+        "source": "MED",
+        "title": "A phase 1, safety, tolerability, and pharmacokinetics study of bisnorcymserine, a highly selective inhibitor of butyrylcholinesterase.",
+        "doi": "10.1016/j.neurot.2026.e00918",
+        "pmcid": "PMC13195608",
+        "year": "2026",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "anastrozole",
+    "query": "anastrozole AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=anastrozole%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:40.811Z",
+    "hitCount": 829,
+    "results": [
+      {
+        "id": "42039673",
+        "source": "MED",
+        "title": "Mitigating Severe Ribociclib-Hepatotoxicity With Corticosteroids.",
+        "doi": "10.1155/crom/4222126",
+        "pmcid": "PMC13107949",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42004367",
+        "source": "MED",
+        "title": "The Inhibitory Effect of Anastrozole on the Metabolism of Abemaciclib &lt;i&gt;In Vitro&lt;/i&gt; and &lt;i&gt;In Vivo&lt;/i&gt;.",
+        "doi": "10.1021/acsomega.6c00144",
+        "pmcid": "PMC13084465",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42380684",
+        "source": "MED",
+        "title": "CDK4/6 inhibitor-statin interaction and rhabdomyolysis in breast cancer treatment: a case-based systematic review.",
+        "doi": "10.1007/s00280-026-04913-w",
+        "pmcid": "PMC13319690",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42505223",
+        "source": "MED",
+        "title": "Evolving First-Line Endocrine Therapy in HR+/HER2- Metastatic Breast Cancer: CDK4/6 Inhibition, Biomarker-Guided Strategies and Emerging Therapeutic Paradigms.",
+        "doi": "10.3390/curroncol33070421",
+        "pmcid": "PMC13409238",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41214676",
+        "source": "MED",
+        "title": "Cost-effectiveness analysis of Anastrozole combined with Abemaciclib for the treatment of postmenopausal hormone receptor-positive advanced breast cancer.",
+        "doi": "10.1186/s12962-025-00605-z",
+        "pmcid": "PMC12599054",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41560336",
+        "source": "MED",
+        "title": "Open-Label Study Assessing Relative and Absolute Bioavailability of Oral Camizestrant Formulations and Food Effects in Healthy Postmenopausal Women.",
+        "doi": "10.1111/cts.70475",
+        "pmcid": "PMC12820339",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40739405",
+        "source": "MED",
+        "title": "Pharmacokinetics, efficacy and safety of palbociclib and fulvestrant in a patient with hormone receptor-positive, human epidermal growth factor receptor 2 negative metastatic breast cancer with end-stage renal disease undergoing hemodialysis: A case report.",
+        "doi": "10.1007/s10637-025-01564-1",
+        "pmcid": "PMC12515196",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41901307",
+        "source": "MED",
+        "title": "Physiologically-Based Pharmacokinetics of Ribociclib Drug-Drug Interactions and Organ Impairment Pharmacokinetics in Early Breast Cancer.",
+        "doi": "10.3390/ph19030461",
+        "pmcid": "PMC13029677",
+        "year": "2026",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "exemestane",
+    "query": "exemestane AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=exemestane%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:41.056Z",
+    "hitCount": 783,
+    "results": [
+      {
+        "id": "42564046",
+        "source": "MED",
+        "title": "Development and characterization of an injectable thermoresponsive PLGA nanoparticle-loaded &lt;i&gt;in situ&lt;/i&gt; gel for sustained exemestane delivery.",
+        "doi": "10.3389/fonc.2026.1905253",
+        "pmcid": "PMC13441772",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41827696",
+        "source": "MED",
+        "title": "Cannabinoids in Combination with Conventional Breast Cancer Therapies: Mechanistic Insights and the Gap to Clinical Translation.",
+        "doi": "10.3390/cancers18050761",
+        "pmcid": "PMC12984507",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40286062",
+        "source": "MED",
+        "title": "Determination and Disposition of the Aromatase Inhibitor Exemestane in CYP3A-Deficient Mice.",
+        "doi": "10.3390/molecules30071440",
+        "pmcid": "PMC11990089",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "42514905",
+        "source": "MED",
+        "title": "From Concept to Clinic: Vepdegestrant (ARV 471) Becomes the First Approved PROTAC Drug.",
+        "doi": "10.3390/pharmaceutics18070827",
+        "pmcid": "PMC13415653",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40144206",
+        "source": "MED",
+        "title": "Abemaciclib in combination with therapies for patients with metastatic breast cancer: a phase 1b study.",
+        "doi": "10.3389/fonc.2025.1555921",
+        "pmcid": "PMC11937066",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41249390",
+        "source": "MED",
+        "title": "An integrated computational, in vitro and metabolomics approach to the discovery of novel aromatase inhibitors with anti-breast cancer activities.",
+        "doi": "10.1038/s41598-025-24086-5",
+        "pmcid": "PMC12623930",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41496983",
+        "source": "MED",
+        "title": "Imlunestrant in ER+ advanced breast cancer - bridging innovation and clinical reality.",
+        "doi": "10.1097/ms9.0000000000004417",
+        "pmcid": "PMC12768124",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41550808",
+        "source": "MED",
+        "title": "HDAC inhibitors as anticancer drugs: chemical diversity, clinical trials, challenges and perspectives.",
+        "doi": "10.1039/d5ra09034b",
+        "pmcid": "PMC12805814",
+        "year": "2026",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "oxandrolone",
+    "query": "oxandrolone AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=oxandrolone%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:41.707Z",
+    "hitCount": 99,
+    "results": [
+      {
+        "id": "41898445",
+        "source": "MED",
+        "title": "Anabolic-Androgenic Steroids Revisited: Structural Biology, Receptor Signaling, and Mechanisms of Anabolic-Androgenic Dissociation.",
+        "doi": "10.3390/ijms27062581",
+        "pmcid": "PMC13026150",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40861228",
+        "source": "MED",
+        "title": "The efficacy and safety of androgen analog oxandrolone in improving clinical outcomes in burn patients: a systematic review and meta-analysis of randomized controlled trials.",
+        "doi": "10.3389/fmed.2025.1485474",
+        "pmcid": "PMC12370634",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40925340",
+        "source": "MED",
+        "title": "Detection of Anabolic Androgenic Steroids and Steroid Esters-Comparing Dried Blood Spots Collection Devices and Urine Samples.",
+        "doi": "10.1002/dta.3950",
+        "pmcid": "PMC12689249",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "37525311",
+        "source": "MED",
+        "title": "Multicenter Clinical Research in Congenital Heart Disease: Leveraging Research Networks to Investigate Important Unanswered Questions.",
+        "doi": "10.1542/neo.24-8-e504",
+        "pmcid": "PMC10615178",
+        "year": "2023",
+        "openAccess": "N"
+      },
+      {
+        "id": "39728413",
+        "source": "MED",
+        "title": "In Silico Analysis of Triamterene as a Potential Dual Inhibitor of VEGFR-2 and c-Met Receptors.",
+        "doi": "10.3390/jox14040105",
+        "pmcid": "PMC11676455",
+        "year": "2024",
+        "openAccess": "Y"
+      },
+      {
+        "id": "38283433",
+        "source": "MED",
+        "title": "AMONDYS 45 (Casimersen), a Novel Antisense Phosphorodiamidate Morpholino Oligomer: Clinical Considerations for Treatment in Duchenne Muscular Dystrophy.",
+        "doi": "10.7759/cureus.51237",
+        "pmcid": "PMC10821770",
+        "year": "2023",
+        "openAccess": "Y"
+      },
+      {
+        "id": "32775441",
+        "source": "MED",
+        "title": "The Effect of Coffee on Pharmacokinetic Properties of Drugs : A Review.",
+        "doi": "10.1155/2020/7909703",
+        "pmcid": "PMC7397437",
+        "year": "2020",
+        "openAccess": "Y"
+      },
+      {
+        "id": "38344525",
+        "source": "MED",
+        "title": "Social Interest Data as a Proxy for Off-Label Performance-Enhancing Drug Use: Implications and Clinical Considerations.",
+        "doi": "10.7759/cureus.52011",
+        "pmcid": "PMC10854362",
+        "year": "2024",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "stanozolol",
+    "query": "stanozolol AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=stanozolol%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:41.939Z",
+    "hitCount": 88,
+    "results": [
+      {
+        "id": "41898445",
+        "source": "MED",
+        "title": "Anabolic-Androgenic Steroids Revisited: Structural Biology, Receptor Signaling, and Mechanisms of Anabolic-Androgenic Dissociation.",
+        "doi": "10.3390/ijms27062581",
+        "pmcid": "PMC13026150",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40925340",
+        "source": "MED",
+        "title": "Detection of Anabolic Androgenic Steroids and Steroid Esters-Comparing Dried Blood Spots Collection Devices and Urine Samples.",
+        "doi": "10.1002/dta.3950",
+        "pmcid": "PMC12689249",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41075106",
+        "source": "MED",
+        "title": "Therapeutic Advances in Hereditary Angioedema: A Focus on Present and Future Options.",
+        "doi": "10.1007/s12325-025-03382-6",
+        "pmcid": "PMC12618362",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40438099",
+        "source": "MED",
+        "title": "Real-world evidence of the effectiveness and utilization of subcutaneous C1INH long-term prophylaxis in patients with HAE in Spain and Germany.",
+        "doi": "10.3389/fimmu.2025.1576235",
+        "pmcid": "PMC12116583",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40726012",
+        "source": "MED",
+        "title": "Exploring Multi-Organ Crosstalk via the TissUse HUMIMIC Chip System: Lessons Learnt So Far.",
+        "doi": "10.1002/bit.70031",
+        "pmcid": "PMC12503007",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "39289932",
+        "source": "MED",
+        "title": "Exploring the Confluence of Animal Medicine and its Implications for Human Health: A Systematic Literature Review.",
+        "doi": "10.2174/011570159x333443240822115028",
+        "pmcid": "PMC12172238",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41869035",
+        "source": "MED",
+        "title": "Non-medical use of exogenous testosterone and anabolic-androgenic substances in young men: health, psychological, and fertility consequences.",
+        "doi": "10.3389/fendo.2026.1781416",
+        "pmcid": "PMC12999365",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40436944",
+        "source": "MED",
+        "title": "Drug repurposing targeting COVID-19 3CL protease using molecular docking and machine learning regression approaches.",
+        "doi": "10.1038/s41598-025-02773-7",
+        "pmcid": "PMC12119952",
+        "year": "2025",
+        "openAccess": "Y"
+      }
+    ]
+  },
+  {
+    "compound": "oxymetholone",
+    "query": "oxymetholone AND pharmacokinetics AND (human OR volunteers)",
+    "database": "Europe PMC",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=oxymetholone%20AND%20pharmacokinetics%20AND%20(human%20OR%20volunteers)&format=json&pageSize=8",
+    "retrievedAt": "2026-09-09T06:52:42.267Z",
+    "hitCount": 35,
+    "results": [
+      {
+        "id": "40733310",
+        "source": "MED",
+        "title": "Cyclodextrins as Multifunctional Platforms in Drug Delivery and Beyond: Structural Features, Functional Applications, and Future Trends.",
+        "doi": "10.3390/molecules30143044",
+        "pmcid": "PMC12299055",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "40925340",
+        "source": "MED",
+        "title": "Detection of Anabolic Androgenic Steroids and Steroid Esters-Comparing Dried Blood Spots Collection Devices and Urine Samples.",
+        "doi": "10.1002/dta.3950",
+        "pmcid": "PMC12689249",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "38066900",
+        "source": "MED",
+        "title": "Minimal intensity conditioning strategies for bone marrow failure: is it time for \"preventative\" transplants?",
+        "doi": "10.1182/hematology.2023000470",
+        "pmcid": "PMC10727038",
+        "year": "2023",
+        "openAccess": "N"
+      },
+      {
+        "id": "41262061",
+        "source": "MED",
+        "title": "Hepatotoxicity of dietary supplements containing &lt;i&gt;Garcinia gummi-gutta&lt;/i&gt; (L.) N. Robson.",
+        "doi": "10.1080/13880209.2025.2591467",
+        "pmcid": "PMC12636546",
+        "year": "2025",
+        "openAccess": "Y"
+      },
+      {
+        "id": "41884239",
+        "source": "MED",
+        "title": "Endocrine disorders linked to chronic kidney disease: Mechanisms and clinical implications.",
+        "doi": "10.5527/wjn.v15.i1.113875",
+        "pmcid": "PMC13010852",
+        "year": "2026",
+        "openAccess": "Y"
+      },
+      {
+        "id": "38344525",
+        "source": "MED",
+        "title": "Social Interest Data as a Proxy for Off-Label Performance-Enhancing Drug Use: Implications and Clinical Considerations.",
+        "doi": "10.7759/cureus.52011",
+        "pmcid": "PMC10854362",
+        "year": "2024",
+        "openAccess": "Y"
+      },
+      {
+        "id": "35216722",
+        "source": "MED",
+        "title": "Testosterone Replacement Therapy in Hypogonadal Men.",
+        "doi": "10.1016/j.ecl.2021.11.005",
+        "pmcid": "PMC8994707",
+        "year": "2022",
+        "openAccess": "N"
+      },
+      {
+        "id": "36644692",
+        "source": "MED",
+        "title": "Anabolic-androgenic steroids: How do they work and what are the risks?",
+        "doi": "10.3389/fendo.2022.1059473",
+        "pmcid": "PMC9837614",
+        "year": "2022",
+        "openAccess": "Y"
+      }
+    ]
+  }
+]

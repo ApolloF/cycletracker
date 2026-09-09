@@ -1,0 +1,1571 @@
+{
+  "spreadsheetId": "1Hrbw5eXb8bw1YfZZmBHHS3IY_j95V5DJsc6-piO__Ns",
+  "tab": "0",
+  "url": "https://docs.google.com/spreadsheets/d/1Hrbw5eXb8bw1YfZZmBHHS3IY_j95V5DJsc6-piO__Ns/export?format=csv&gid=0",
+  "retrievedAt": "2026-09-09T06:52:43.838Z",
+  "checksum": "26e4392593b51c3d9bedb91d40b505acca7989e8ff83236babb64af9a013af79",
+  "previous": null,
+  "errors": [],
+  "rows": [
+    {
+      "row": 2,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Enanthate",
+        "Category": "Steroids",
+        "t1/2 (days)": "7.19",
+        "Cmax": "11.3095",
+        "Tmax": "1.3875",
+        "Bioavailability": "0.72",
+        "Model": "Advanced + Linear Regression\nAdvanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4721027/\nhttps://journals.physiology.org/doi/full/10.1152/ajpendo.00502.2001"
+      },
+      "numericFields": {
+        "Cmax": 11.3095,
+        "Tmax": 1.3875,
+        "Bioavailability": 0.72
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 3,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Cypionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "6.9",
+        "Cmax": "5.56",
+        "Tmax": "4.5",
+        "Bioavailability": "0.7",
+        "Model": "Advanced + Linear Regression\nAdvanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://tau.amegroups.org/article/view/11328/13164\nhttps://ascpt.onlinelibrary.wiley.com/doi/full/10.1002/psp4.12287\nhttps://journals.physiology.org/doi/full/10.1152/ajpendo.00502.2001"
+      },
+      "numericFields": {
+        "Cmax": 5.56,
+        "Tmax": 4.5,
+        "Bioavailability": 0.7
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 4,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Propionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "1.0375",
+        "Cmax": "26",
+        "Tmax": "1.0625",
+        "Bioavailability": "0.84",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://academic.oup.com/jcem/article-abstract/63/6/1361/2674622?redirectedFrom=fulltext&login=false\nThe men then were given 25 mg testosterone propionate-19-d3, im, at 0800 h.\nThe maximum plasma testosterone-19-d3 levels (15.0 ng/ml for subject 1 and 11.5 ng/ml for subject 2) occurred between 24 and 27 h.\nEndogenous testosterone levels just before the administration of testosterone prOpionate-19-d3 were 7.2 ng/ml in subject 1 and 7.5 ng/ml in subject 2.\nBefore studying the disposition of testosterone propionate, we determined the levels of endogenous plasma testosterone for 4 days in the two normal men (Fig. 1). The mean plasma testosterone concentration in subject 1 was 6.6 ng/ml, with a range of 4.0-8.9 ng/ml. Subject 2 had a mean value of 6.9 ng/ml and a range of 4.7-9.3 ng/ml."
+      },
+      "numericFields": {
+        "Cmax": 26,
+        "Tmax": 1.0625,
+        "Bioavailability": 0.84
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 5,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Undecanoate (Caster Oil)",
+        "Category": "Steroids",
+        "t1/2 (days)": "33.9",
+        "Cmax": "1.187",
+        "Tmax": "10",
+        "Bioavailability": "0.65",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://onlinelibrary.wiley.com/doi/full/10.2164/jandrol.109.009597\nhttps://pubmed.ncbi.nlm.nih.gov/10229906/\nhttps://www.bayer.com/sites/default/files/NEBIDO_EN_PI.pdf"
+      },
+      "numericFields": {
+        "Cmax": 1.187,
+        "Tmax": 10,
+        "Bioavailability": 0.65
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 6,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Undecanoate (MCT Oil)",
+        "Category": "Steroids",
+        "t1/2 (days)": "20",
+        "Cmax": "1.85",
+        "Tmax": "8.5",
+        "Bioavailability": "0.65",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "Estimated values using:\nhttps://grok.com/share/bGVnYWN5_1dedff03-e6fb-4ab9-80d0-c9396324e737\nhttps://grok.com/share/bGVnYWN5_7386fa68-5014-46a2-b25a-4927ecdc29ba"
+      },
+      "numericFields": {
+        "Cmax": 1.85,
+        "Tmax": 8.5,
+        "Bioavailability": 0.65
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 7,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Trestolone",
+        "Category": "Steroids",
+        "t1/2 (days)": "53",
+        "Cmax": "0.995049",
+        "Tmax": "10.5",
+        "Bioavailability": "0.65",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "---"
+      },
+      "numericFields": {
+        "Cmax": 0.995049,
+        "Tmax": 10.5,
+        "Bioavailability": 0.65
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 8,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Undecanoate (Oral)",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.7666666667",
+        "Cmax": "2.4876225",
+        "Tmax": "0.2041666667",
+        "Bioavailability": "0.0683",
+        "Model": "Advanced",
+        "Multiplier Used": "Yes, to align with 28 days pharmacokinetics in the study (995ng/dl Cmax)",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4168025/\nhttps://pubmed.ncbi.nlm.nih.gov/3770015/"
+      },
+      "numericFields": {
+        "Cmax": 2.4876225,
+        "Tmax": 0.2041666667,
+        "Bioavailability": 0.0683
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 9,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Phenylpropionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "2.5",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.69",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9611952/"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.69
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 10,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Isocaproate",
+        "Category": "Steroids",
+        "t1/2 (days)": "3.1",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.75",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9611952/"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.75
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 11,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Suspension",
+        "Category": "Steroids",
+        "t1/2 (days)": "1.375",
+        "Cmax": "5.067",
+        "Tmax": "0.25",
+        "Bioavailability": "1",
+        "Model": "Advanced",
+        "Multiplier Used": "Yes, to more closely match other esters. Reference values from study used horses.",
+        "Sources/Notes": "https://rmtcnet.com/wp-content/uploads/2015/07/An_interlaboratory_study_of_the_pharmacokinetics_of_testosterone_following_intramuscular_administration_to_Thoroughbred_horses1.pdf"
+      },
+      "numericFields": {
+        "Cmax": 5.067,
+        "Tmax": 0.25,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 12,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Decanoate",
+        "Category": "Steroids",
+        "t1/2 (days)": "5.6",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.65",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://sobraf.org/wp-content/uploads/2020/09/Desregula%C3%A7%C3%A3o-do-Eixo-HPA-Detec%C3%A7%C3%A3o-de-testosterona-s%C3%A9rica.pdf"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.65
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 13,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Gel (Testogel/Androgel)",
+        "Category": "Steroids",
+        "t1/2 (days)": "2.983333333",
+        "Cmax": "4.44",
+        "Tmax": "0.4166666667",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.medirequests.com/pdfs/Olsson%20et%20al%202014t.pdf"
+      },
+      "numericFields": {
+        "Cmax": 4.44,
+        "Tmax": 0.4166666667,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 14,
+      "raw": {
+        "Compound": "Testosterone",
+        "Type": "Test Base (Sublingual)",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.02569444444",
+        "Cmax": "1,132",
+        "Tmax": "0.009722222222",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://bpspubs.onlinelibrary.wiley.com/doi/full/10.1111/bcp.12887"
+      },
+      "numericFields": {
+        "Cmax": 1132,
+        "Tmax": 0.009722222222,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 15,
+      "raw": {
+        "Compound": "Boldenone",
+        "Type": "Cypionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "---",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "---",
+        "Model": "---",
+        "Multiplier Used": "---",
+        "Sources/Notes": "Cloned settings from Testosterone Cypionate"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 16,
+      "raw": {
+        "Compound": "Estradiol",
+        "Type": "Topical (EstroGel)",
+        "Category": "Steroids",
+        "t1/2 (days)": "1.5",
+        "Cmax": "2.16558",
+        "Tmax": "0.1666666667",
+        "Bioavailability": "0.616",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/9389778/\nhttps://www.estrogel.com/for-healthcare-providers/why-choose-estrogel/\nhttps://pubmed.ncbi.nlm.nih.gov/10465378/"
+      },
+      "numericFields": {
+        "Cmax": 2.16558,
+        "Tmax": 0.1666666667,
+        "Bioavailability": 0.616
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 17,
+      "raw": {
+        "Compound": "Estradiol",
+        "Type": "Cypionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "3.735416667",
+        "Cmax": "2.8",
+        "Tmax": "0.70125",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.sciencedirect.com/science/article/abs/pii/S073170851831464X?via%3Dihub"
+      },
+      "numericFields": {
+        "Cmax": 2.8,
+        "Tmax": 0.70125,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 18,
+      "raw": {
+        "Compound": "Estradiol",
+        "Type": "Valerate",
+        "Category": "Steroids",
+        "t1/2 (days)": "3.5",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes - to more closely match graphs within recent study (n=24)",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/22257576/\nhttps://en.wikipedia.org/wiki/Estradiol_valerate#cite_note-Notelovitz-2012-43"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 19,
+      "raw": {
+        "Compound": "Progesterone",
+        "Type": "Oral",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.9491666667",
+        "Cmax": "169.53",
+        "Tmax": "0.0625",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "Yes - to more closely match graphs within study",
+        "Sources/Notes": "https://www.dovepress.com/pharmacokinetics-of-hard-micronized-progesterone-capsules-via-vaginal--peer-reviewed-fulltext-article-DDDT\nhttps://www.dovepress.com/getfile_article_fulltext.php?filename=article_fulltext%2Fs204000%2F204624/img/DDDT_A_204624_T0005.jpg"
+      },
+      "numericFields": {
+        "Cmax": 169.53,
+        "Tmax": 0.0625,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 20,
+      "raw": {
+        "Compound": "Progesterone",
+        "Type": "Vaginal",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.8608333333",
+        "Cmax": "12.3",
+        "Tmax": "0.25",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.dovepress.com/pharmacokinetics-of-hard-micronized-progesterone-capsules-via-vaginal--peer-reviewed-fulltext-article-DDDT\nhttps://www.dovepress.com/getfile_article_fulltext.php?filename=article_fulltext%2Fs204000%2F204624/img/DDDT_A_204624_T0005.jpg"
+      },
+      "numericFields": {
+        "Cmax": 12.3,
+        "Tmax": 0.25,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 21,
+      "raw": {
+        "Compound": "T3 (Triiodothyronine)",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.9183333333",
+        "Cmax": "6.92",
+        "Tmax": "0.1041666667",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5167556/"
+      },
+      "numericFields": {
+        "Cmax": 6.92,
+        "Tmax": 0.1041666667,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 22,
+      "raw": {
+        "Compound": "Trenbolone",
+        "Type": "Enanthate",
+        "Category": "Steroids",
+        "t1/2 (days)": "11",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.71",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.sciencedirect.com/science/article/abs/pii/S002228602030452X"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.71
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 23,
+      "raw": {
+        "Compound": "Trenbolone",
+        "Type": "Acetate",
+        "Category": "Steroids",
+        "t1/2 (days)": "1.5",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.87",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.sciencedirect.com/science/article/abs/pii/S002228602030452X"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.87
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 24,
+      "raw": {
+        "Compound": "Trenbolone",
+        "Type": "Hexahydrobenzylcarbonate",
+        "Category": "Steroids",
+        "t1/2 (days)": "8",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.66",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.sciencedirect.com/science/article/abs/pii/S002228602030452X"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.66
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 25,
+      "raw": {
+        "Compound": "Trestolone Acetate (MENT)",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.1555555556",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.87",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://helda.helsinki.fi/server/api/core/bitstreams/10765da2-e1ff-4896-b15f-d2e9c8077e5a/content"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.87
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 26,
+      "raw": {
+        "Compound": "Masteron",
+        "Type": "Propionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "2",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.84",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://en.wikipedia.org/wiki/Drostanolone_propionate#cite_note-Llewellyn2011-1"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.84
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 27,
+      "raw": {
+        "Compound": "Masteron",
+        "Type": "Enanthate",
+        "Category": "Steroids",
+        "t1/2 (days)": "4.5",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.73",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "Numerous sources but none of a high quality."
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.73
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 28,
+      "raw": {
+        "Compound": "Mesterolone (Proviron)",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.5208333333",
+        "Cmax": "12.4",
+        "Tmax": "0.06666666667",
+        "Bioavailability": "0.03",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://resources.bayer.com.au/resources/uploads/PI/file9420.pdf"
+      },
+      "numericFields": {
+        "Cmax": 12.4,
+        "Tmax": 0.06666666667,
+        "Bioavailability": 0.03
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 29,
+      "raw": {
+        "Compound": "Nandrolone (Deca/NPP)",
+        "Type": "Phenylpropionate",
+        "Category": "Steroids",
+        "t1/2 (days)": "2.4",
+        "Cmax": "8.91465",
+        "Tmax": "1",
+        "Bioavailability": "0.67",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/9103484/\nhttps://paulogentil.com/pdf/Nandrolone%20Esters%20-%20Pharmacokinetics%20and%20Pharmacodynamics.pdf"
+      },
+      "numericFields": {
+        "Cmax": 8.91465,
+        "Tmax": 1,
+        "Bioavailability": 0.67
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 30,
+      "raw": {
+        "Compound": "Nandrolone (Deca/NPP)",
+        "Type": "Decanoate",
+        "Category": "Steroids",
+        "t1/2 (days)": "10.2",
+        "Cmax": "3.99",
+        "Tmax": "1.833",
+        "Bioavailability": "0.73",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://academic.oup.com/jcem/article/90/5/2624/2836761"
+      },
+      "numericFields": {
+        "Cmax": 3.99,
+        "Tmax": 1.833,
+        "Bioavailability": 0.73
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 31,
+      "raw": {
+        "Compound": "Boldenone Undecylenate (Equipoise)",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "5.125",
+        "Cmax": "1.098",
+        "Tmax": "6",
+        "Bioavailability": "0.63",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/17348894/"
+      },
+      "numericFields": {
+        "Cmax": 1.098,
+        "Tmax": 6,
+        "Bioavailability": 0.63
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 32,
+      "raw": {
+        "Compound": "Dihydroboldenone (DHB)",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "9",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes",
+        "Sources/Notes": "Numerous sources but none of a high quality."
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 33,
+      "raw": {
+        "Compound": "Primobolan",
+        "Type": "Oral",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.2083",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.88",
+        "Model": "Basic",
+        "Multiplier Used": "No",
+        "Sources/Notes": "Numerous sources but none of a high quality."
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.88
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 34,
+      "raw": {
+        "Compound": "Primobolan",
+        "Type": "Injectable",
+        "Category": "Steroids",
+        "t1/2 (days)": "10.5",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.73",
+        "Model": "Basic",
+        "Multiplier Used": "Yes",
+        "Sources/Notes": "https://books.google.co.uk/books?id=w4ZUJAdleTsC&pg=PA358&redir_esc=y#v=onepage&q&f=false"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.73
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 35,
+      "raw": {
+        "Compound": "Halotestin",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.083333",
+        "Cmax": "800",
+        "Tmax": "0.075",
+        "Bioavailability": "0.57",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/4009439/ (data available in full paper)\nEstimated first-pass loss of fluoxymesterone is 43%"
+      },
+      "numericFields": {
+        "Cmax": 800,
+        "Tmax": 0.075,
+        "Bioavailability": 0.57
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 36,
+      "raw": {
+        "Compound": "Anadrol",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.3326388",
+        "Cmax": "37.6",
+        "Tmax": "0.1458333",
+        "Bioavailability": "0.95",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.academia.edu/74246708/Validation_of_the_determination_of_oxymetholone_in_human_plasma_analysis_using_gas_chromatography_mass_spectrometry_Application_to_pharmacokinetic_studies"
+      },
+      "numericFields": {
+        "Cmax": 37.6,
+        "Tmax": 0.1458333,
+        "Bioavailability": 0.95
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 37,
+      "raw": {
+        "Compound": "Dianabol",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.21875",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.95",
+        "Model": "Basic",
+        "Multiplier Used": "Yes, to match other orals with tmax etc",
+        "Sources/Notes": "https://www.bionity.com/en/encyclopedia/Methandrostenolone.html\nNo reliable bioavailability data"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.95
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 38,
+      "raw": {
+        "Compound": "Turinabol",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.666667",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes, to match other orals with tmax etc",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/1798729/\nhttps://www.bionity.com/en/encyclopedia/4-Chlorodehydromethyltestosterone.html"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 39,
+      "raw": {
+        "Compound": "Winstrol",
+        "Type": "Oral",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.375",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes, to match other orals with tmax etc",
+        "Sources/Notes": "https://books.google.co.uk/books?id=w4ZUJAdleTsC&pg=PA358&redir_esc=y#v=onepage&q&f=false\nhttps://www.ebi.ac.uk/chebi/searchId.do?printerFriendlyView=true&locale=null&chebiId=9249&viewTermLineage=null&structureView=&"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 40,
+      "raw": {
+        "Compound": "Winstrol",
+        "Type": "Injectable",
+        "Category": "Steroids",
+        "t1/2 (days)": "3.42",
+        "Cmax": "8.12",
+        "Tmax": "7",
+        "Bioavailability": "1",
+        "Model": "Advanced",
+        "Multiplier Used": "Yes",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/17348894/"
+      },
+      "numericFields": {
+        "Cmax": 8.12,
+        "Tmax": 7,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 41,
+      "raw": {
+        "Compound": "Anavar",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.2791666",
+        "Cmax": "772",
+        "Tmax": "0.06666667",
+        "Bioavailability": "0.625",
+        "Model": "Advanced",
+        "Multiplier Used": "Yes",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7134583/"
+      },
+      "numericFields": {
+        "Cmax": 772,
+        "Tmax": 0.06666667,
+        "Bioavailability": 0.625
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 42,
+      "raw": {
+        "Compound": "Superdrol",
+        "Type": "---",
+        "Category": "Steroids",
+        "t1/2 (days)": "0.4166667",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "0.5",
+        "Model": "Basic",
+        "Multiplier Used": "Yes",
+        "Sources/Notes": "https://en.wikipedia.org/wiki/Methasterone"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 0.5
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 43,
+      "raw": {
+        "Compound": "HCG (100 IU ≈ 0.01 mg / 10 μg)",
+        "Type": "---",
+        "Category": "Peptides",
+        "t1/2 (days)": "1.9625",
+        "Cmax": "2,072",
+        "Tmax": "1",
+        "Bioavailability": "0.45",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8301557/\nhttps://pubmed.ncbi.nlm.nih.gov/12470572/"
+      },
+      "numericFields": {
+        "Cmax": 2072,
+        "Tmax": 1,
+        "Bioavailability": 0.45
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 44,
+      "raw": {
+        "Compound": "Human Growth Hormone (HGH) (1mg ≈ 3 IU)",
+        "Type": "---",
+        "Category": "Peptides",
+        "t1/2 (days)": "0.1722222222",
+        "Cmax": "622.9",
+        "Tmax": "0.22083333",
+        "Bioavailability": "0.63",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.nature.com/articles/pr198896\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC2014216/"
+      },
+      "numericFields": {
+        "Cmax": 622.9,
+        "Tmax": 0.22083333,
+        "Bioavailability": 0.63
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 45,
+      "raw": {
+        "Compound": "Semaglutide",
+        "Type": "Injections (Ozempic/Wegovy)",
+        "Category": "Peptides",
+        "t1/2 (days)": "6.5",
+        "Cmax": "2879.1",
+        "Tmax": "1.25",
+        "Bioavailability": "0.89",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7854449/\nhttps://link.springer.com/article/10.1007/s13300-019-0581-y"
+      },
+      "numericFields": {
+        "Cmax": 2879.1,
+        "Tmax": 1.25,
+        "Bioavailability": 0.89
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 46,
+      "raw": {
+        "Compound": "Semaglutide",
+        "Type": "Oral (Rybelsus)",
+        "Category": "Peptides",
+        "t1/2 (days)": "0.54",
+        "Cmax": "232.38",
+        "Tmax": "0.059027778",
+        "Bioavailability": "0.008",
+        "Model": "Advanced",
+        "Multiplier Used": "Yes, to match injectable levels",
+        "Sources/Notes": "https://www.ema.europa.eu/en/documents/assessment-report/rybelsus-epar-public-assessment-report_en.pdf\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC8505367/"
+      },
+      "numericFields": {
+        "Cmax": 232.38,
+        "Tmax": 0.059027778,
+        "Bioavailability": 0.008
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 47,
+      "raw": {
+        "Compound": "Tirzepatide (Mounjaro)",
+        "Type": "---",
+        "Category": "Peptides",
+        "t1/2 (days)": "4.8625",
+        "Cmax": "5,826.67",
+        "Tmax": "1.5",
+        "Bioavailability": "0.8",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9268041/\nhttps://www.ncbi.nlm.nih.gov/books/NBK585056/"
+      },
+      "numericFields": {
+        "Cmax": 5826.67,
+        "Tmax": 1.5,
+        "Bioavailability": 0.8
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 48,
+      "raw": {
+        "Compound": "Retatrutide",
+        "Type": "---",
+        "Category": "Peptides",
+        "t1/2 (days)": "6.1388888",
+        "Cmax": "11495.37037",
+        "Tmax": "1.681944458",
+        "Bioavailability": "0.8",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.cell.com/cell-metabolism/pdfExtended/S1550-4131(22)00312-6\nNo good source for bioavailability"
+      },
+      "numericFields": {
+        "Cmax": 11495.37037,
+        "Tmax": 1.681944458,
+        "Bioavailability": 0.8
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 49,
+      "raw": {
+        "Compound": "Mazdutide",
+        "Type": "---",
+        "Category": "Peptides",
+        "t1/2 (days)": "18.1",
+        "Cmax": "7348.3333",
+        "Tmax": "3.01458",
+        "Bioavailability": "---",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561728/\nHalf life range 7.3–44.8 days. Assuming log-normal distribution. Estimated mean of 18.1 days using Geometric Mean. May not be accurate."
+      },
+      "numericFields": {
+        "Cmax": 7348.3333,
+        "Tmax": 3.01458,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 50,
+      "raw": {
+        "Compound": "DNP",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "3.69916",
+        "Cmax": "0.04166666667",
+        "Tmax": "0.009411764706",
+        "Bioavailability": "1",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6468406/\nestimates from Figure 4\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4534549/\nNo good source for bioavailability"
+      },
+      "numericFields": {
+        "Cmax": 0.04166666667,
+        "Tmax": 0.009411764706,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 51,
+      "raw": {
+        "Compound": "Arimidex",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "1.95",
+        "Cmax": "3930",
+        "Tmax": "0.04166666667",
+        "Bioavailability": "0.8",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/19470631/\nhttps://watermark.silverchair.com/jcem2975.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAA08wggNLBgkqhkiG9w0BBwagggM8MIIDOAIBADCCAzEGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM8CERv9ZprOhwW3-KAgEQgIIDAjnDaok9E5iTfdMwoiudZPs2PGMhLjicSFPKcQp7809bnJYGaEnhU1ZaOw3RvmZqIbm1GmlPWcJ2HFbgGKFzmd3M5hoUqpTTN5oyD0lqgLgFaPh5_VKwNcwoxyHtamqdnI9BsJv7lGsRWPpvlrn--iKIg-5uYocWjR-3XKQ7X3mAdpKF0TUGLxqWJfo1KwOC1c0ZrtclILn8Gvc65pZfvozx--1k6XiV83oHBaCtLF2Hf0Ad-h474DmYR5sjse7cdmPEweix2mh0uJmFwkgSDt4_LsxvVv7mmcSAe14hfoBWRUBuqH1l7_u17JSVjvBE8Akon77fFtC_sJLVWxtGmnEodMY13UfZwNmqxplXB7VF-8fUk9SWjt9O1ibiZX5kp_fIaVINPksVCcN6mj-eMAPyds9ClByONUuu3gpaksNmv36jASd2rjeVnYjMuR4jRWYZw5nfF2keKm5I4zKQKnWGeHSuz_txLILpRp5mC8qhzMMfxgAiymONOayN5usZP76kDhpUrwrjvENvgfVt4IeJJVXI9gRgnW0JrQh2xGfEkEnyWoi35bVhKuJEx9J0VBx41J10rigBkuVmvIriykjShM7t5TaWvMaPWTgSn3TBRdxhwu1AZeqyplQQfy_eHgwbt1w1NI7bEGJ1JteBVgwGqpWlN4y8laqnJ2I7PAzZ84vm1j_RhtFSbsNJb4x1-ylZ2pyxphj8EXGk5Eu61hM68PolqoVFS3pCgoKVjO3S68XzmODiZ6jUr7NZMF1pP32ao8qMzDpmCLjvAaHLeUpzbk3sMRkPZ2OD07ZVsN1J1TyFMrd2Nm4qbe26blzBRZWvZusBLH1fvRAWOhivGEB-S23v1f_nZ80mWWqhu42zHWpfXWMVy4JqecsZNlMBPmHXzkcX7ODry1xRt548zEPRu63UscIoRCTelz8__UPfHiVZLxFj_fLzAitU6sLe8_D3AiGigKh-gc90KKfVCbNgmoeHVyvNbYNJ_snMfljRl7ce7zt3yjzozCw2FZ04mp5f\nhttps://www.sciencedirect.com/topics/medicine-and-dentistry/anastrozole"
+      },
+      "numericFields": {
+        "Cmax": 3930,
+        "Tmax": 0.04166666667,
+        "Bioavailability": 0.8
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 52,
+      "raw": {
+        "Compound": "Aromasin",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "0.945833333",
+        "Cmax": "57.6",
+        "Tmax": "0.059375",
+        "Bioavailability": "0.05",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1884784/\nhttps://pubmed.ncbi.nlm.nih.gov/20678561/"
+      },
+      "numericFields": {
+        "Cmax": 57.6,
+        "Tmax": 0.059375,
+        "Bioavailability": 0.05
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 53,
+      "raw": {
+        "Compound": "Clenbuterol (Oral)",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "1.106666667",
+        "Cmax": "0.333",
+        "Tmax": "0.1083333333",
+        "Bioavailability": "n/a",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4694390/"
+      },
+      "numericFields": {
+        "Cmax": 0.333,
+        "Tmax": 0.1083333333,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 54,
+      "raw": {
+        "Compound": "Nolvadex (Tamoxifen)",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "1.975",
+        "Cmax": "200",
+        "Tmax": "0.3441666667",
+        "Bioavailability": "0.15",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2002/21109_Nolvadex_biopharmr.pdf\nhttps://www.accessdata.fda.gov/drugsatfda_docs/label/1998/17970.pdf\nhttps://pdf.sciencedirectassets.com/271326/1-s2.0-S0015028286X63006/1-s2.0-S0015028216495749/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIDsB8SNWf5tK1yfQf7ja8uzHu3DNtFjnY8336B%2FITGc5AiA2OXLf4j%2FS8yal91FcsRAWAUYWNfjnLalr%2Bple%2BzRgCyq8BQiw%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAUaDDA1OTAwMzU0Njg2NSIMx%2FFWoKtAxTj%2BvJgjKpAFqiHm27EVwJ%2F5FmFwo2pgeIRgX4%2BRJdSA52SzpauZHh3RAJryE95bakqxqDnCZuWlQe%2FOP4WYNmcA%2FV5wOpKHqV4BJxw0%2FMIrZ5pXLndENeWF5KEUgW2Pr7UmwgDFOB8gL%2BWniLrlCayyHai0wyKnEYxDwMPV%2B1LKr%2FRTgVAyKOhLBE9IoHcrhKxaXydRdMrpYrlUZBh3y903sWhBJTr7cGHE%2FdIa5DEAe%2FgAyUYr3IM9p68GLVYiH%2BuBE5KqV2q4kBg3w0ZgznSta0XPpk%2FPaD2sMWZUE8r6u8Qf5B9CH2kMFXmTyLmUi%2B2DhtwlIGjmMy%2FbH1J7uyoLWzvXhbMX4C2h9y9z1dzEEq%2BYhalGKezUJROqrFiy55VR6c%2FhvCR4Zz6RCv%2Btk82UDLgDig%2F58xlIYNHdGcB71Q5ls%2BHIQf3ubXOq%2FvExLVvlwGKF%2Fofjq0q%2F3SOCcORjwFk0YNgIegguCxG4PuzyyosF1tff3oCFYTgBVkiIctLjTv8Z8WUCTE6lGxFa6cJog4l3jCoTx5ISCl4EQKr0RRloWhaA1ixC9a0vtc0NUjB%2Fvd7i3xClF%2FsCePvPKR5JOIYd%2BLsZArXLPJHxPeGd62Iz1kxGt5aEDLujddlz1mRWLDy4ItxV%2F6RYOySpLndNxAGulfuwxkyfQkZ3hcs%2B9t8MsDEm5sib5NUBEyet6yV0luA%2FlMDkW1WU6jcdFYKWmq7UaaH1uUy4VXE6neiJ1AJziHQDWrw77K8FQwAiuDaZrFca%2Bwtvh0EQJAhniCEYpRD1vfomAcBCv0rqSulwhV%2BtI3brNuHZbtjBCn9C%2F0MJnMxlRaIlFjFNOtq8io2zuyqZcpScGqNFMN8GB7D1wa%2FpeRejdvIw86W6rgY6sgHcXV9kbtVtfcrK7pLplIFece58KvQ4OuMO%2B%2B%2BMET%2Fy%2BgKWW%2FiTw%2BEBDCKtpocHtm2mvt9GG1%2BGj%2B%2Ffqzi93Wup%2FdTz%2Bj%2BoDXM0DYwSIyQ2TJXFJ2k6NTQYuNo5HEZ9yDlKmyXrt5ymNDBk%2FW9%2FAYAzmU1qJYCIdVgRIgTFywjgRBqKTks8c3QxzLvAD5zULWQdalRjBlOpQoIZ5Zv1hHYKhpDftn4v0RktkBPTg7qoFX%2F2&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240215T235011Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYWBT4WLTQ%2F20240215%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=13a9a1d5a8f006fb4ca884dd2e4d549716f2ecb22de1f185d36d45f4601bbacf&hash=fc69fceb06729bd63653224be1650afa18570d956020b4e7b388898706494f97&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0015028216495749&tid=spdf-b1caa65b-b9e3-499a-b340-91d9e5e78e2b&sid=48c24cfb817ca4429c9b75371bfc1dc92010gxrqb&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=1d005b51565352530054&rr=856173a08eb76515&cc=gb"
+      },
+      "numericFields": {
+        "Cmax": 200,
+        "Tmax": 0.3441666667,
+        "Bioavailability": 0.15
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 55,
+      "raw": {
+        "Compound": "Clomid",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "5",
+        "Cmax": "40",
+        "Tmax": "0.2083333333",
+        "Bioavailability": "0.95",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/19033451/\nhttps://www.chemeurope.com/en/encyclopedia/Clomifene.html"
+      },
+      "numericFields": {
+        "Cmax": 40,
+        "Tmax": 0.2083333333,
+        "Bioavailability": 0.95
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 56,
+      "raw": {
+        "Compound": "Cabergoline",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "3.583333333",
+        "Cmax": "4.03",
+        "Tmax": "0.083",
+        "Bioavailability": "0.465",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/12844325/\nhttps://sci-hub.ru/https://pubmed.ncbi.nlm.nih.gov/12844325/\nhttps://pharmacoj.com/ojs/index.php/Medph/article/download/46/21"
+      },
+      "numericFields": {
+        "Cmax": 4.03,
+        "Tmax": 0.083,
+        "Bioavailability": 0.465
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 57,
+      "raw": {
+        "Compound": "Letrozole",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "1.389583333",
+        "Cmax": "45.684",
+        "Tmax": "0.0775",
+        "Bioavailability": "n/a",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/16229115/"
+      },
+      "numericFields": {
+        "Cmax": 45.684,
+        "Tmax": 0.0775,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 58,
+      "raw": {
+        "Compound": "Nebivolol",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "0.7054166667",
+        "Cmax": "11.6",
+        "Tmax": "0.1295833333",
+        "Bioavailability": "0.54",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/24845234/\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4576779/"
+      },
+      "numericFields": {
+        "Cmax": 11.6,
+        "Tmax": 0.1295833333,
+        "Bioavailability": 0.54
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 59,
+      "raw": {
+        "Compound": "Telmistartan",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "0.9708333333",
+        "Cmax": "770.0625",
+        "Tmax": "0.07083333333",
+        "Bioavailability": "0.43",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/17009837/\nhttps://pubmed.ncbi.nlm.nih.gov/11185629/"
+      },
+      "numericFields": {
+        "Cmax": 770.0625,
+        "Tmax": 0.07083333333,
+        "Bioavailability": 0.43
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 60,
+      "raw": {
+        "Compound": "Tadalafil",
+        "Type": "---",
+        "Category": "Pharmaceuticals/Chemicals",
+        "t1/2 (days)": "0.7083333333",
+        "Cmax": "1,725",
+        "Tmax": "0.1041666667",
+        "Bioavailability": "n/a",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1885023/"
+      },
+      "numericFields": {
+        "Cmax": 1725,
+        "Tmax": 0.1041666667,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 61,
+      "raw": {
+        "Compound": "Ostarine (MK-2866 / Enobosarm)",
+        "Type": "---",
+        "Category": "Sarms",
+        "t1/2 (days)": "1",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes, to match levels of LGD (with better pharmacokinetic data) at similar standard dosing (5mg LGD and 15mg Ostarine)",
+        "Sources/Notes": "https://www.sciencedirect.com/science/article/abs/pii/S0022286019310646\nhttps://pubmed.ncbi.nlm.nih.gov/24074268/"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 62,
+      "raw": {
+        "Compound": "Ligandrol (LGD-4033)",
+        "Type": "---",
+        "Category": "Sarms",
+        "t1/2 (days)": "1.25",
+        "Cmax": "498",
+        "Tmax": "0.128205128",
+        "Bioavailability": "n/a",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4111291/\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC4111291/figure/fig1/\nEstimated tmax and cmax from 1mg dosage using graph by measuring pixels."
+      },
+      "numericFields": {
+        "Cmax": 498,
+        "Tmax": 0.128205128,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 63,
+      "raw": {
+        "Compound": "Andarine (S4)",
+        "Type": "---",
+        "Category": "Sarms",
+        "t1/2 (days)": "0.1625",
+        "Cmax": "513.45",
+        "Tmax": "0.03055555556",
+        "Bioavailability": "n/a",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://www.sciencedirect.com/science/article/abs/pii/S0022286019310646\nhttps://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1070476461&disposition=inline\nIn dogs so likely inaccurate. Dosage converted using: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4804402/"
+      },
+      "numericFields": {
+        "Cmax": 513.45,
+        "Tmax": 0.03055555556,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 64,
+      "raw": {
+        "Compound": "Testolone (RAD-140)",
+        "Type": "---",
+        "Category": "Sarms",
+        "t1/2 (days)": "1.8625",
+        "Cmax": "447",
+        "Tmax": "0.25",
+        "Bioavailability": "n/a",
+        "Model": "Advanced",
+        "Multiplier Used": "No",
+        "Sources/Notes": "https://pubmed.ncbi.nlm.nih.gov/34565686/"
+      },
+      "numericFields": {
+        "Cmax": 447,
+        "Tmax": 0.25,
+        "Bioavailability": null
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 65,
+      "raw": {
+        "Compound": "Cardarine (GW-501516)",
+        "Type": "---",
+        "Category": "Sarms",
+        "t1/2 (days)": "0.8333333333",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes, to more closely match levels of other SARMs",
+        "Sources/Notes": "https://go.drugbank.com/drugs/DB05416\nhttps://www.mitobridge.com/images/resources/SelectivePPARModulatorsImproveMitochondrialFunction_PotentialTrea....pdf\nNo good source for half life."
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    },
+    {
+      "row": 66,
+      "raw": {
+        "Compound": "S-23",
+        "Type": "---",
+        "Category": "Sarms",
+        "t1/2 (days)": "0.1666666667",
+        "Cmax": "---",
+        "Tmax": "---",
+        "Bioavailability": "1",
+        "Model": "Basic",
+        "Multiplier Used": "Yes, to more closely match levels of other SARMs",
+        "Sources/Notes": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2630904/\nhttps://www.sciencedirect.com/science/article/abs/pii/S0378111923002317\nNo good sources"
+      },
+      "numericFields": {
+        "Cmax": null,
+        "Tmax": null,
+        "Bioavailability": 1
+      },
+      "capability": "tracking-only",
+      "unresolved": [
+        "Reference dose, units, parameter meanings and reuse terms require review before modeling"
+      ]
+    }
+  ]
+}

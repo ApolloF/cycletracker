@@ -1,0 +1,31 @@
+{
+  "name": "cycletracker", "private": true, "version": "0.1.0", "type": "module",
+  "packageManager": "pnpm@11.19.0", "engines": {"node": ">=22"},
+  "scripts": {
+    "dev": "concurrently -n api,web \"pnpm dev:api\" \"pnpm dev:web\"",
+    "dev:web": "vite --config apps/web/vite.config.ts",
+    "dev:api": "tsx apps/api/src/server.ts",
+    "build": "pnpm typecheck && vite build --config apps/web/vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run", "test:browser": "playwright test",
+    "db:migrate": "tsx apps/api/src/migrate.ts",
+    "catalog:import": "tsx scripts/import-catalog.ts",
+    "validate:reference": "tsx scripts/reference-fixtures.ts && python scripts/validate_reference.py",
+    "worker": "tsx apps/api/src/worker.ts"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.4.0", "@fastify/rate-limit": "^10.3.0", "@fastify/swagger": "^9.7.0",
+    "@js-temporal/polyfill": "^0.5.1", "@radix-ui/react-dialog": "^1.1.15", "@tanstack/react-query": "^5.90.0",
+    "better-auth": "^1.3.0", "csv-parse": "^6.1.0", "dexie": "^4.2.0", "drizzle-orm": "^0.45.0",
+    "echarts": "^6.0.0", "fastify": "^5.6.0", "lucide-react": "^0.577.0", "nodemailer": "^7.0.0",
+    "pg": "^8.16.0", "react": "^19.2.0", "react-dom": "^19.2.0", "react-router-dom": "^7.13.0",
+    "web-push": "^3.6.7", "zod": "^4.3.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0", "@playwright/test": "^1.58.0", "@tailwindcss/vite": "^4.2.0",
+    "@types/node": "^24.0.0", "@types/nodemailer": "^7.0.0", "@types/pg": "^8.15.0",
+    "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0", "@types/web-push": "^3.6.4",
+    "@vitejs/plugin-react": "^5.1.0", "concurrently": "^9.2.0", "tailwindcss": "^4.2.0",
+    "tsx": "^4.21.0", "typescript": "^5.9.0", "vite": "^7.3.0", "vitest": "^4.0.0"
+  }
+}

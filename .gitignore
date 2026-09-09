@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+!.env.example
+.local/
+coverage/
+test-results/
+playwright-report/
+*.log
+*.sqlite*
+*.bak
+__pycache__/
+.venv/
+.playwright-mcp/
+data/private/

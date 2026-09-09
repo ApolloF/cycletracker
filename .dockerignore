@@ -1,0 +1,10 @@
+node_modules
+.git
+.local
+.env
+.venv
+dist
+test-results
+playwright-report
+.playwright-mcp
+data/research/europe-pmc-search.json
