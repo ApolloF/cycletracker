@@ -1,15 +1,16 @@
 import { z } from 'zod';
 import { administrationSchema, healthSchema, protocolSchema, type Operation, type Protocol } from './index.js';
-export type ImportPreview = { source: string; records: { sourceId: string; kind: Operation['kind']; data: any; duplicate: boolean }[]; unresolved: { sourceId: string; reason: string; raw: unknown; canMapAdministration?: boolean }[]; protocol: Protocol | null; documents: unknown[]; warnings: string[] };
+export type ImportPreview = { source: string; protocolSourceId: string; duplicatePhases: number; records: { sourceId: string; kind: Operation['kind']; data: any; duplicate: boolean }[]; unresolved: { sourceId: string; reason: string; raw: unknown; canMapAdministration?: boolean }[]; protocol: Protocol | null; documents: unknown[]; warnings: string[] };
 
-export function previewImport(input: unknown, existingSourceIds: string[] = []): ImportPreview {
+export function previewImport(input: unknown, existingSourceIds: string[] = [], existingPhases: { source: string; phaseId: string }[] = []): ImportPreview {
   const raw = z.record(z.string(), z.unknown()).parse(input) as any;
   const source = raw.format === 'cycletracker-1' ? 'cycletracker-1' : 'cycle-dashboard';
-  const output: ImportPreview = { source, records: [], unresolved: [], protocol: null, documents: Array.isArray(raw.documents) ? raw.documents : [], warnings: ['Review all mappings before importing. Attachments require separate upload.', 'Imported phases remain drafts; no phase is automatically activated.'] };
+  const output: ImportPreview = { source, protocolSourceId: '', duplicatePhases: 0, records: [], unresolved: [], protocol: null, documents: Array.isArray(raw.documents) ? raw.documents : [], warnings: ['Review all mappings before importing. Attachments require separate upload.', 'Imported phases remain drafts; no phase is automatically activated.'] };
   const existing = new Set(existingSourceIds);
   const scope = raw.sourceWorkspace ?? raw.user;
   if (!scope) output.warnings.push('No source profile identifier. Different unidentified exports may share record IDs.');
   const prefix = source + (scope ? `:${encodeURIComponent(String(scope))}` : '');
+  output.protocolSourceId = prefix;
   const at = (record: any) => record.at ?? record.created_at ?? record.ts ?? record.timestamp;
   const provenance = (sourceId: string, record: unknown) => ({ sourceId, format: source, raw: record });
   const unresolved = (sourceId: string, record: unknown, reason: string, canMapAdministration = false) => output.unresolved.push({ sourceId, raw: record, reason, canMapAdministration });
@@ -30,7 +31,13 @@ export function previewImport(input: unknown, existingSourceIds: string[] = []):
       } else unresolved(sourceId, record, 'Unsupported or invalid record; keep the source for manual review');
     }
     const protocol = protocolSchema.safeParse(raw.workspace?.protocol);
-    if (protocol.success) output.protocol = { ...protocol.data, activePhaseId: null, activations: [] };
+    if (protocol.success) {
+      const imported = new Set(existingPhases.filter(phase => phase.source === prefix).map(phase => phase.phaseId));
+      const phases = protocol.data.phases.filter(phase => !imported.has(phase.id));
+      output.duplicatePhases = protocol.data.phases.length - phases.length;
+      output.protocol = { ...protocol.data, phases, activePhaseId: null, activations: [] };
+      if (output.duplicatePhases) output.warnings.push('Previously imported phases are skipped, including edited or archived copies. Manage those phases in Plan.');
+    }
   } else {
     for (const [index, record] of (Array.isArray(raw.logs) ? raw.logs : []).entries()) {
       const sourceId = `${prefix}:log:${record?.id ?? `missing-${index}`}`;

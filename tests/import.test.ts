@@ -1,5 +1,11 @@
 import { it, expect } from 'vitest';
 import { previewImport } from '../packages/domain/src/import.js';
+it('shows only new phases and keeps phase identities scoped to their source', () => {
+  const source = { format: 'cycletracker-1', sourceWorkspace: 'one', records: [], workspace: { protocol: { phases: [{ id: 'p', name: 'Old', entries: [] }, { id: 'q', name: 'New', entries: [] }] } } };
+  const preview = previewImport(source, [], [{ source: 'cycletracker-1:one', phaseId: 'p' }]);
+  expect(preview.duplicatePhases).toBe(1); expect(preview.protocol?.phases.map(p => p.id)).toEqual(['q']);
+  expect(previewImport({ ...source, sourceWorkspace: 'two' }, [], [{ source: 'cycletracker-1:one', phaseId: 'p' }]).duplicatePhases).toBe(0);
+});
 it('preserves nested health fields, profile identities and offset timestamps', () => {
   const source = { user: 'profile A', logs: [{ id: 7, type: 'blood_pressure', created_at: '2026-01-01T08:00:00+02:00', data: { sys: 120, dia: 80, hr: 62, notes: 'Synthetic BP' } }], symptoms: [{ id: 9, created_at: '2026-01-01T09:00:00Z', mood_level: 0, hair_shedding_level: 2, notes: 'Synthetic note', symptoms: ['headache'], aromasin_dose_mg: 5 }] };
   const preview = previewImport(source);

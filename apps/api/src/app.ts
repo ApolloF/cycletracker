@@ -149,10 +149,12 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
   app.get('/api/v1/records/:id/revisions', async req => ({ items: (await db.query('SELECT version,data,created_at FROM revisions WHERE record_id=$1 AND owner_id=$2 ORDER BY version DESC', [uuid.parse((req.params as any).id), ownerOf(req)])).rows }));
   app.post('/api/v1/import/preview', async req => {
     const keys = (await db.query('SELECT source_id FROM import_keys WHERE owner_id=$1', [ownerOf(req)])).rows.map(r => r.source_id);
-    return previewImport(req.body, keys);
+    const phases = (await db.query('SELECT source,source_phase_id AS "phaseId" FROM imported_phases WHERE owner_id=$1', [ownerOf(req)])).rows as { source: string; phaseId: string }[];
+    return previewImport(req.body, keys, phases);
   });
   app.post('/api/v1/import/apply', async req => {
-    const body = z.object({ operationId: uuid, confirmed: z.literal(true), expectedVersion: z.number().int(), records: z.array(z.object({ sourceId: z.string().min(1).max(200), kind: z.enum(['administration', 'health']), data: z.unknown() })).max(1000), protocol: protocolSchema.nullable().optional() }).parse(req.body);
+    const body = z.object({ operationId: uuid, confirmed: z.literal(true), expectedVersion: z.number().int(), records: z.array(z.object({ sourceId: z.string().min(1).max(200), kind: z.enum(['administration', 'health']), data: z.unknown() })).max(1000), protocolSourceId: z.string().min(1).max(200).optional(), protocol: protocolSchema.nullable().optional() }).parse(req.body);
+    if (body.protocol?.phases.length && !body.protocolSourceId) fail(422, 'Phase imports require a source identity. Preview the export again.');
     const hash = createHash('sha256').update(JSON.stringify(body)).digest('hex');
     return db.transaction(async tx => {
       const ws = (await tx.query('SELECT * FROM workspaces WHERE owner_id=$1 FOR UPDATE', [ownerOf(req)])).rows[0];
@@ -169,13 +171,24 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
         await saveOperation(tx, ownerOf(req), { id, operationId: randomUUID(), kind: record.kind, expectedVersion: 0, data: record.data });
         await tx.query('INSERT INTO import_keys(owner_id,source_id,record_id) VALUES($1,$2,$3)', [ownerOf(req), record.sourceId, id]); imported++;
       }
-      if (body.protocol) {
+      let draftsAdded = 0, duplicatePhases = 0;
+      if (body.protocol?.phases.length) {
         const current = protocolSchema.parse(ws.protocol);
-        const drafts = body.protocol.phases.map(p => ({ ...p, id: randomUUID(), entries: p.entries.map(e => ({ ...e, id: randomUUID(), version: 1 })) }));
-        const merged = protocolSchema.parse({ ...current, phases: [...current.phases, ...drafts] });
-        await tx.query('UPDATE workspaces SET protocol=$2,version=version+1 WHERE owner_id=$1', [ownerOf(req), merged]);
+        const drafts = [];
+        for (const phase of body.protocol.phases) {
+          const found = await tx.query('SELECT phase_id FROM imported_phases WHERE owner_id=$1 AND source=$2 AND source_phase_id=$3', [ownerOf(req), body.protocolSourceId, phase.id]);
+          if (found.rows.length) { duplicatePhases++; continue; }
+          const draft = { ...phase, id: randomUUID(), entries: phase.entries.map(entry => ({ ...entry, id: randomUUID(), version: 1 })) };
+          drafts.push(draft);
+          await tx.query('INSERT INTO imported_phases(owner_id,source,source_phase_id,phase_id) VALUES($1,$2,$3,$4)', [ownerOf(req), body.protocolSourceId, phase.id, draft.id]);
+        }
+        draftsAdded = drafts.length;
+        if (draftsAdded) {
+          const merged = protocolSchema.parse({ ...current, phases: [...current.phases, ...drafts] });
+          await tx.query('UPDATE workspaces SET protocol=$2,version=version+1 WHERE owner_id=$1', [ownerOf(req), merged]);
+        }
       }
-      const result = { imported, duplicates, drafts: body.protocol?.phases.length ?? 0 };
+      const result = { imported, duplicates, drafts: draftsAdded, duplicatePhases };
       await tx.query('INSERT INTO import_batches(owner_id,id,hash,result) VALUES($1,$2,$3,$4)', [ownerOf(req), body.operationId, hash, result]);
       return result;
     });

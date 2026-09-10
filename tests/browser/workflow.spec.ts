@@ -108,4 +108,16 @@ test('verified account, custom routine, logging, scenario comparison and respons
   await page.getByLabel('Cycle Dashboard or CycleTracker JSON export').setInputFiles({ name: 'synthetic-again.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(legacy)) });
   await expect(page.getByText('1 mapped · 1 duplicates · 0 unresolved')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Import reviewed records', exact: true })).toBeDisabled();
+  await page.getByRole('dialog', { name: 'Import preview', exact: true }).getByRole('button', { name: 'Close', exact: true }).click();
+  const phases = { format: 'cycletracker-1', sourceWorkspace: 'synthetic-phase-source', records: [], workspace: { protocol: { phases: [{ id: 'source-phase', name: 'Imported draft', entries: [] }] } } };
+  await page.getByLabel('Cycle Dashboard or CycleTracker JSON export').setInputFiles({ name: 'phases.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(phases)) });
+  await page.getByLabel('Add 1 phases as drafts').check();
+  await page.getByRole('button', { name: 'Import reviewed records', exact: true }).click();
+  await expect(page.getByText('Imported 0 records; 0 duplicates skipped; 1 draft phases added')).toBeVisible();
+  await page.getByLabel('Cycle Dashboard or CycleTracker JSON export').setInputFiles({ name: 'phases-again.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(phases)) });
+  await expect(page.getByText('1 phases already imported', { exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Import reviewed records', exact: true })).toBeDisabled();
+  const workspace = await page.evaluate(async () => (await (await fetch('/api/v1/workspace')).json()));
+  expect(workspace.protocol.phases).toHaveLength(2);
+  expect(workspace.protocol.phases.find((phase: any) => phase.id === workspace.protocol.activePhaseId).name).toBe('Synthetic routine');
 });
