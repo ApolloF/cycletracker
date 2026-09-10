@@ -99,4 +99,13 @@ test('verified account, custom routine, logging, scenario comparison and respons
   await expect(page.getByText('15 mg · taken')).toBeVisible();
   const saved = await page.evaluate(async () => (await (await fetch('/api/v1/records?limit=100')).json()).items);
   expect(saved.filter((record: any) => record.kind === 'administration' && record.data.amount.value === 15)).toHaveLength(1);
+  await page.locator('.profile:visible, .mobile-settings:visible').first().click();
+  const legacy = { user: 'synthetic-import-profile', logs: [{ id: 1, type: 'note', created_at: '2026-01-01T12:00:00Z', data: { notes: 'Synthetic imported note' } }] };
+  await page.getByLabel('Cycle Dashboard or CycleTracker JSON export').setInputFiles({ name: 'synthetic.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(legacy)) });
+  await expect(page.getByText('1 mapped · 0 duplicates · 0 unresolved')).toBeVisible();
+  await page.getByRole('button', { name: 'Import reviewed records', exact: true }).click();
+  await expect(page.getByText('Imported 1 records; 0 duplicates skipped')).toBeVisible();
+  await page.getByLabel('Cycle Dashboard or CycleTracker JSON export').setInputFiles({ name: 'synthetic-again.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(legacy)) });
+  await expect(page.getByText('1 mapped · 1 duplicates · 0 unresolved')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Import reviewed records', exact: true })).toBeDisabled();
 });

@@ -113,6 +113,7 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
       data = scenarioSchema.parse(op.data);
       if (data.model.scale.kind === 'absolute') fail(422, 'Absolute catalog models have not passed the release validation gate');
     } else data = z.object({ name: z.string().trim().min(1).max(150), route: z.string().min(1), notes: z.string().max(4000).default('') }).parse(op.data);
+    if (old?.data.importSource) data.importSource = old.data.importSource;
     const now = new Date().toISOString();
     const eventAt = data.at ?? now;
     if (old) await tx.query('INSERT INTO revisions(record_id,owner_id,version,data) VALUES ($1,$2,$3,$4)', [op.id, owner, old.version, old.data]);
@@ -151,9 +152,15 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
     return previewImport(req.body, keys);
   });
   app.post('/api/v1/import/apply', async req => {
-    const body = z.object({ confirmed: z.literal(true), expectedVersion: z.number().int(), records: z.array(z.object({ sourceId: z.string().min(1).max(200), kind: z.enum(['administration', 'health']), data: z.unknown() })).max(1000), protocol: protocolSchema.nullable().optional() }).parse(req.body);
+    const body = z.object({ operationId: uuid, confirmed: z.literal(true), expectedVersion: z.number().int(), records: z.array(z.object({ sourceId: z.string().min(1).max(200), kind: z.enum(['administration', 'health']), data: z.unknown() })).max(1000), protocol: protocolSchema.nullable().optional() }).parse(req.body);
+    const hash = createHash('sha256').update(JSON.stringify(body)).digest('hex');
     return db.transaction(async tx => {
       const ws = (await tx.query('SELECT * FROM workspaces WHERE owner_id=$1 FOR UPDATE', [ownerOf(req)])).rows[0];
+      const previous = (await tx.query('SELECT hash,result FROM import_batches WHERE owner_id=$1 AND id=$2', [ownerOf(req), body.operationId])).rows[0];
+      if (previous) {
+        if (previous.hash !== hash) fail(409, 'Import operation ID already used for different content');
+        return previous.result;
+      }
       if (ws.version !== body.expectedVersion) fail(409, 'Workspace changed. Preview the import again.');
       let imported = 0, duplicates = 0;
       for (const record of body.records) {
@@ -168,7 +175,9 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
         const merged = protocolSchema.parse({ ...current, phases: [...current.phases, ...drafts] });
         await tx.query('UPDATE workspaces SET protocol=$2,version=version+1 WHERE owner_id=$1', [ownerOf(req), merged]);
       }
-      return { imported, duplicates, drafts: body.protocol?.phases.length ?? 0 };
+      const result = { imported, duplicates, drafts: body.protocol?.phases.length ?? 0 };
+      await tx.query('INSERT INTO import_batches(owner_id,id,hash,result) VALUES($1,$2,$3,$4)', [ownerOf(req), body.operationId, hash, result]);
+      return result;
     });
   });
   app.delete('/api/v1/records/:id', async req => {
@@ -194,7 +203,7 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
     reply.header('Content-Type', 'application/pdf').header('Content-Disposition', `attachment; filename="report.pdf"`).header('X-Content-Type-Options', 'nosniff');
     return readFile(row.path);
   });
-  app.get('/api/v1/export', async req => ({ format: 'cycletracker-1', exportedAt: new Date().toISOString(), workspace: (await db.query('SELECT protocol,preferences,version FROM workspaces WHERE owner_id=$1', [ownerOf(req)])).rows[0], records: (await db.query('SELECT id,kind,data,version,event_at FROM records WHERE owner_id=$1 ORDER BY event_at,id', [ownerOf(req)])).rows, documents: (await db.query('SELECT id,name,bytes FROM documents WHERE owner_id=$1', [ownerOf(req)])).rows, attachmentNotice: 'PDF bytes are separate authenticated downloads. Preserve them alongside this export.' }));
+  app.get('/api/v1/export', async req => ({ format: 'cycletracker-1', sourceWorkspace: ownerOf(req), exportedAt: new Date().toISOString(), workspace: (await db.query('SELECT protocol,preferences,version FROM workspaces WHERE owner_id=$1', [ownerOf(req)])).rows[0], records: (await db.query('SELECT id,kind,data,version,event_at FROM records WHERE owner_id=$1 ORDER BY event_at,id', [ownerOf(req)])).rows, documents: (await db.query('SELECT id,name,bytes FROM documents WHERE owner_id=$1', [ownerOf(req)])).rows, attachmentNotice: 'PDF bytes are separate authenticated downloads. Preserve them alongside this export.' }));
   app.get('/api/v1/sessions', async req => auth.api.listSessions({ headers: fromNodeHeaders(req.headers) }));
   app.post('/api/v1/push', async req => {
     const b = z.object({ endpoint: z.string().url().startsWith('https://'), keys: z.object({ p256dh: z.string(), auth: z.string() }) }).parse(req.body);

@@ -2,6 +2,16 @@
 
 This is the first development increment. The original four-milestone plan is **not complete**, and public-release gates have not passed.
 
+## 10 September: legacy import
+
+- Reviewed the original application's export serializer and log/symptom input fields, without loading personal records. Synthetic fixtures cover nested `data`, `created_at` with offsets, blood pressure/pulse, notes and symptom values including zero.
+- Source profile names scope legacy IDs. New CycleTracker exports include their source workspace ID. Unidentified older exports retain their old keys and show a collision warning; migration of already-imported unscoped identities still needs review.
+- Imported legacy rows retain their original fields in `importSource`, including symptom drug amounts that are not automatically treated as administrations. The API preserves this provenance when a record is edited.
+- Checklist entries and lab panels cannot be mapped through the administration form. Ambiguous lab timestamps/units, PDF references, settings, dose defaults and weekly goals remain explicit gaps rather than silently disappearing. Unresolved rows can be inspected in preview.
+- Import requests use account-scoped transaction IDs. Retrying the same preview after a lost response returns the original result, including phase creation, before checking the now-stale workspace version. Changed content under the same ID is rejected; invalid records roll back the entire batch.
+- Retry identity currently survives within the open preview, not a browser restart. A separately created import request can still add the same phases again; source-phase deduplication remains outstanding. Record source keys prevent duplicate records.
+- Validation: build/typecheck, 25 API/domain/import test executions and all 16 browser checks passed. Browser workflows now import a synthetic legacy note and verify duplicate detection on a second preview. A WebKit completion-order race was fixed: the success message follows refresh and preview cleanup.
+
 ## 10 September: production offline startup
 
 - Cached workspace/history queries run while offline, with an explicit missing-cache message. Invalid local identity data no longer breaks startup; an online signed-out response removes the cached account selector.
@@ -61,7 +71,7 @@ The existing `.local/postgres` directory contains retained interrupted test data
 
 1. **Complete foundation verification.** Continue WebKit regression coverage. Extend persistence checks to startup failure paths and separate processes. Ensure failure paths release process locks. Replace duplicate test registration with a standalone fixture module.
 2. **Verify offline behavior.** Resolve Windows WebKit offline navigation and verify real-device support. Test full browser-process restart, storage eviction, worker upgrades, duplicate completions and concurrent tabs/devices. Add a deferred logout flow and field-by-field conflict comparison/reapplication. Cached startup, queue ordering, draft export and explicit discard are implemented; full offline release gates remain open.
-3. **Complete migration.** Map the original export's actual `created_at` and nested `data` fields; preserve symptom values, BP, notes, lab panels and protocol settings. Handle multiple source profiles without source-ID collisions. Make phase-import retries idempotent. Verify record counts, timestamps and attachments against synthetic legacy fixtures. Do not convert checklist-only entries to known doses.
+3. **Complete migration.** Add date-only lab records with explicit sampling uncertainty, source units/ranges and attachment mapping. Map legacy protocol settings without auto-activation. Deduplicate phases across separately created import requests, persist unfinished import batches across restart, and handle older unscoped source identities. Nested health fields, profile-scoped IDs and same-request retry protection are implemented. Do not convert checklist-only entries to known doses.
 4. **Finish planning workflows.** Add weekly navigation and print layout, planned-phase previews, readable recurrence labels, dose-basis conveniences, pill/package controls, injection-site rotation, quick-action ordering and durable drafts across navigation/restarts. Verify treatment of earlier schedule versions after active-plan edits.
 5. **Finish health and history.** Add server-side date/type/search filters, paginated health data, irregular-time-aware trends, panel comparison, explicit unit presentation, attachment cleanup/replacement and edit-history UI. A 100-record cache is not complete historical coverage.
 6. **Finish Plotter interactions.** Add arbitrary event editing, multi-time/weekday schedule editing, phase markers, compatible analyte grouping, measured lab overlays, sensitivity analysis, defined steady-state/washout metrics and robust CSV quoting. Ensure changing formulation cannot silently reuse incompatible parameters. Keep unknown past adherence separate from explicit reconstructions.

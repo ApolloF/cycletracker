@@ -13,3 +13,4 @@ CREATE TABLE IF NOT EXISTS documents (id text PRIMARY KEY, owner_id text NOT NUL
 CREATE TABLE IF NOT EXISTS push_subscriptions (id text PRIMARY KEY, owner_id text NOT NULL REFERENCES "user"(id) ON DELETE CASCADE, subscription jsonb NOT NULL);
 CREATE TABLE IF NOT EXISTS reminder_jobs (id text PRIMARY KEY, owner_id text NOT NULL REFERENCES "user"(id) ON DELETE CASCADE, occurrence_id text NOT NULL, due_at timestamptz NOT NULL, sent_at timestamptz, snoozed_until timestamptz);
 CREATE TABLE IF NOT EXISTS import_keys (owner_id text NOT NULL REFERENCES "user"(id) ON DELETE CASCADE, source_id text NOT NULL, record_id text NOT NULL, imported_at timestamptz NOT NULL DEFAULT now(), PRIMARY KEY(owner_id,source_id));
+CREATE TABLE IF NOT EXISTS import_batches (owner_id text NOT NULL REFERENCES "user"(id) ON DELETE CASCADE, id text NOT NULL, hash text NOT NULL, result jsonb NOT NULL, PRIMARY KEY(owner_id,id));

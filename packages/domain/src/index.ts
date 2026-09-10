@@ -118,7 +118,9 @@ export function supplies(phase: Phase, from: string, to: string) {
     return { entry: e, count: doses.length, quantity, unit, packages: e.packageAmount ? Math.ceil(quantity / e.packageAmount.value) : null, uncertain: e.schedule.kind === 'prn' };
   });
 }
+const importSourceSchema = z.object({ sourceId: z.string(), format: z.string(), raw: z.unknown() });
 export const administrationSchema = z.object({
+  importSource: importSourceSchema.optional(),
   occurrenceId: z.string().nullable().default(null), phaseId: z.string().nullable().default(null),
   entryId: z.string().nullable().default(null), at: z.string().datetime({ offset: true }),
   status: z.enum(['taken', 'skipped', 'retracted']), snapshot: entrySchema,
@@ -126,6 +128,7 @@ export const administrationSchema = z.object({
 });
 export type Administration = z.infer<typeof administrationSchema>;
 export const healthSchema = z.object({
+  importSource: importSourceSchema.optional(),
   kind: z.enum(['measurement', 'symptom', 'note', 'lab']), at: z.string().datetime({ offset: true }),
   title: z.string().trim().min(1).max(150), note: z.string().max(10000).default(''),
   values: z.array(z.object({ name: z.string().min(1), value: z.number().finite(), unit: z.string().max(40), low: z.number().optional(), high: z.number().optional() })).max(100).default([]),
