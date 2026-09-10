@@ -49,6 +49,7 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
     if (!['GET', 'HEAD'].includes(req.method) && req.headers.origin !== origin) fail(403, 'Request origin is not allowed');
     const owner = options.testSession ? await options.testSession(req.headers) : (await auth.api.getSession({ headers: fromNodeHeaders(req.headers) }))?.user.id;
     if (!owner) fail(401, 'Sign in to continue');
+    if (req.headers['x-workspace-owner'] && req.headers['x-workspace-owner'] !== owner) fail(409, 'Account changed. Reload before continuing.');
     (req as any).owner = owner;
     await db.query('INSERT INTO workspaces(owner_id,protocol,preferences) VALUES ($1,$2,$3) ON CONFLICT DO NOTHING', [owner, emptyProtocol(), preferencesSchema.parse({})]);
   });

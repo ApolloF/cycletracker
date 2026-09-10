@@ -35,6 +35,15 @@ pnpm test:browser
 
 Stop local API and web development servers before browser tests; the test runner starts and owns both services.
 
+Test the built app and service worker separately:
+
+```sh
+pnpm build
+pnpm test:offline
+```
+
+The built app caches its code, current workspace and recent history after an online visit. Pending edits remain in IndexedDB. Offline reload/reconnection is tested separately from the development server. Windows WebKit currently has an expected offline-navigation failure; see the status report. Full browser-process restart and real iOS/Android testing remain outstanding.
+
 Independent numerical checks require Python with NumPy and SciPy:
 
 ```sh

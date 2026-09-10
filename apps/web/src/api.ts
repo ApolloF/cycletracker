@@ -18,16 +18,30 @@ class OfflineStore extends Dexie {
   }
 }
 export const local = new OfflineStore();
+export function cachedUser(): { id: string; name: string; email: string } | null {
+  try {
+    const value = JSON.parse(localStorage.getItem('cycletracker-active-user') ?? 'null');
+    return value && ['id', 'name', 'email'].every(key => typeof value[key] === 'string') ? value : null;
+  } catch { return null; }
+}
 export async function api<T = any>(path: string, init: RequestInit = {}): Promise<T> {
-  const response = await fetch(path.startsWith('/api/') ? path : `/api/v1${path}`, { ...init, credentials: 'same-origin', headers: { ...(!(init.body instanceof FormData) ? { 'Content-Type': 'application/json' } : {}), ...init.headers } });
+  const url = path.startsWith('/api/') ? path : `/api/v1${path}`;
+  const owner = cachedUser()?.id;
+  const response = await fetch(url, { ...init, credentials: 'same-origin', headers: { ...(!(init.body instanceof FormData) ? { 'Content-Type': 'application/json' } : {}), ...(url.startsWith('/api/v1/') && owner ? { 'X-Workspace-Owner': owner } : {}), ...init.headers } });
   const text = await response.text();
   let data: any; try { data = text ? JSON.parse(text) : null; } catch { throw new Error('The server returned an invalid response. Try again.'); }
   if (!response.ok) throw new Error(data?.error?.message ?? data?.error ?? data?.message ?? `Server unavailable (${response.status}). Try again.`); return data;
 }
 export const post = <T = any>(path: string, data: unknown, method = 'POST') => api<T>(path, { method, body: JSON.stringify(data) });
 export async function readCached<T>(owner: string, key: string, request: () => Promise<T>): Promise<T> {
-  try { const value = await request(); await local.cache.put({ key: `${owner}:${key}`, owner, value }); return value; }
-  catch (error) { if (navigator.onLine) throw error; const cached = await local.cache.get(`${owner}:${key}`); if (cached) return cached.value; throw error; }
+  if (cachedUser()?.id !== owner) throw new Error('Account changed. Reload before continuing.');
+  if (!navigator.onLine) {
+    const cached = await local.cache.get(`${owner}:${key}`);
+    if (cached) return cached.value;
+    throw new Error('No saved copy on this device. Connect to load it.');
+  }
+  try { const value = await request(); if (cachedUser()?.id !== owner) throw new Error('Account changed. Reload before continuing.'); await local.cache.put({ key: `${owner}:${key}`, owner, value }); return value; }
+  catch (error) { if (navigator.onLine || cachedUser()?.id !== owner) throw error; const cached = await local.cache.get(`${owner}:${key}`); if (cached) return cached.value; throw error; }
 }
 export async function enqueue(owner: string, operation: Operation) {
   await local.transaction('rw', local.queue, async () => {

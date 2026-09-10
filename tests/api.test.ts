@@ -18,6 +18,9 @@ afterAll(async () => { await app?.close(); await db?.close(); });
 describe('tenant isolation and transactional writes', () => {
   it('rejects unauthenticated reads and wrong-origin writes', async () => {
     expect((await app.inject('/api/v1/records')).statusCode).toBe(401);
+    for (const url of ['/api/v1/workspace', '/api/v1/records', '/api/v1/export']) {
+      expect((await app.inject({ url, headers: { ...headers('bob'), 'x-workspace-owner': 'alice' } })).statusCode).toBe(409);
+    }
     expect((await app.inject({ method: 'PUT', url: '/api/v1/workspace', headers: { 'x-test-user': 'alice', origin: 'https://evil.example' }, payload: {} })).statusCode).toBe(403);
     const op = { id: randomUUID(), operationId: randomUUID(), kind: 'health', expectedVersion: 0, data: { kind: 'note', title: 'Draft', at: new Date().toISOString() } };
     expect((await app.inject({ method: 'POST', url: '/api/v1/sync', headers: headers('bob'), payload: { owner: 'alice', operations: [op] } })).statusCode).toBe(409);

@@ -2,6 +2,16 @@
 
 This is the first development increment. The original four-milestone plan is **not complete**, and public-release gates have not passed.
 
+## 10 September: production offline startup
+
+- Cached workspace/history queries run while offline, with an explicit missing-cache message. Invalid local identity data no longer breaks startup; an online signed-out response removes the cached account selector.
+- The build generates a content-versioned service worker with every emitted app asset, including lazy Plotter and simulation worker files. API responses and private documents are excluded from shell caching. Activation deletes only CycleTracker shell caches, and the worker does not force a new version onto an open page.
+- Cached reads and API requests check account identity, including a response arriving after the account selector changed. A missed reconnect event is recovered by a connectivity-state check, without recurring network requests while connectivity is unchanged.
+- Production Chromium and mobile Chromium: offline tab close/reopen, reload, draft restoration and reconnect passed. Production Firefox: offline reload and reconnect passed after fixing missed connectivity events. Firefox offline tab reopening is still unverified with the final fix.
+- Windows WebKit: offline navigation reports an internal error. This remains an explicit expected failure in the production test; it is not counted as supported offline behavior. Other WebKit workflow tests remain separate.
+- Validation for this increment: build/typecheck, 20 domain/API/import test executions and all 16 development-browser regressions passed. The production offline suite had three successful workflows plus the Windows WebKit expected failure.
+- Full browser-process restart, storage eviction, service-worker upgrades across deployed versions, and real Android/iOS tests remain open. Local preview uses production frontend assets with a synthetic development API; this is not Docker or live deployment evidence.
+
 ## 10 September: pending changes
 
 - Pending operations now have transactional insertion order, instead of UUID order. Existing queues are migrated by record revision because their original insertion times were not saved.
@@ -50,7 +60,7 @@ The existing `.local/postgres` directory contains retained interrupted test data
 ## Next development tasks, in order
 
 1. **Complete foundation verification.** Continue WebKit regression coverage. Extend persistence checks to startup failure paths and separate processes. Ensure failure paths release process locks. Replace duplicate test registration with a standalone fixture module.
-2. **Verify offline behavior.** Test the production service worker, cold reload/restart while offline, duplicate completions, two tabs/devices and account switching. Cached queries must be allowed to run offline during startup. Add a deferred logout flow and field-by-field conflict comparison/reapplication. Queue ordering, draft export and explicit discard are implemented; full offline release gates remain open.
+2. **Verify offline behavior.** Resolve Windows WebKit offline navigation and verify real-device support. Test full browser-process restart, storage eviction, worker upgrades, duplicate completions and concurrent tabs/devices. Add a deferred logout flow and field-by-field conflict comparison/reapplication. Cached startup, queue ordering, draft export and explicit discard are implemented; full offline release gates remain open.
 3. **Complete migration.** Map the original export's actual `created_at` and nested `data` fields; preserve symptom values, BP, notes, lab panels and protocol settings. Handle multiple source profiles without source-ID collisions. Make phase-import retries idempotent. Verify record counts, timestamps and attachments against synthetic legacy fixtures. Do not convert checklist-only entries to known doses.
 4. **Finish planning workflows.** Add weekly navigation and print layout, planned-phase previews, readable recurrence labels, dose-basis conveniences, pill/package controls, injection-site rotation, quick-action ordering and durable drafts across navigation/restarts. Verify treatment of earlier schedule versions after active-plan edits.
 5. **Finish health and history.** Add server-side date/type/search filters, paginated health data, irregular-time-aware trends, panel comparison, explicit unit presentation, attachment cleanup/replacement and edit-history UI. A 100-record cache is not complete historical coverage.

@@ -7,7 +7,7 @@
     "dev:api": "tsx apps/api/src/server.ts",
     "build": "pnpm typecheck && vite build --config apps/web/vite.config.ts",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run", "test:browser": "playwright test",
+    "test": "vitest run", "test:browser": "playwright test", "test:offline": "playwright test --config playwright.production.config.ts",
     "db:migrate": "tsx apps/api/src/migrate.ts",
     "catalog:import": "tsx scripts/import-catalog.ts",
     "validate:reference": "tsx scripts/reference-fixtures.ts && python scripts/validate_reference.py",

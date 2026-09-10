@@ -4,7 +4,7 @@ import { Activity, CalendarDays, ChartNoAxesCombined, Check, CheckCircle2, Chevr
 import { Temporal } from '@js-temporal/polyfill';
 import { administrationSchema, convert, emptyProtocol, occurrences, phaseSchema, preferencesSchema, supplies, type Entry, type Occurrence, type Operation, type Phase } from '../../../packages/domain/src/index.js';
 import { catalog } from '../../../packages/domain/src/catalog.js';
-import { api, post, local, readCached, enqueue, synchronize, pendingChanges, download, type Workspace, type SavedRecord } from './api.js';
+import { api, post, local, readCached, cachedUser, enqueue, synchronize, pendingChanges, download, type Workspace, type SavedRecord } from './api.js';
 import { PendingChanges } from './PendingChanges.js';
 import { Empty, Field, Sheet, formatDate, formatTime } from './ui.js';
 import { EntryEditor } from './EntryEditor.js';
@@ -39,7 +39,14 @@ function Auth({ onSignedIn }: { onSignedIn(u: User): void }) {
 
 export default function App() {
   const [user, setUser] = useState<User | null>(null); const [ready, setReady] = useState(false);
-  useEffect(() => { api('/api/auth/get-session').then(s => { setUser(s?.user ?? null); if (s?.user) localStorage.setItem('cycletracker-active-user', JSON.stringify(s.user)); }).catch(() => { if (!navigator.onLine) { const previous = localStorage.getItem('cycletracker-active-user'); if (previous) setUser(JSON.parse(previous)); } }).finally(() => setReady(true)); }, []);
+  useEffect(() => {
+    if (!navigator.onLine) { setUser(cachedUser()); setReady(true); return; }
+    api('/api/auth/get-session').then(s => {
+      setUser(s?.user ?? null);
+      if (s?.user) localStorage.setItem('cycletracker-active-user', JSON.stringify(s.user));
+      else localStorage.removeItem('cycletracker-active-user');
+    }).catch(() => { if (!navigator.onLine) setUser(cachedUser()); }).finally(() => setReady(true));
+  }, []);
   if (!ready) return <div className="loading">Opening your workspace…</div>;
   if (!user) return <Auth onSignedIn={u => { localStorage.setItem('cycletracker-active-user', JSON.stringify(u)); setUser(u); }}/>;
   return <WorkspaceApp user={user} onSignOut={() => setUser(null)}/>;
@@ -48,8 +55,8 @@ export default function App() {
 function WorkspaceApp({ user, onSignOut }: { user: User; onSignOut(): void }) {
   const [showPending, setShowPending] = useState(false);
   const client = useQueryClient(); const [tab, setTab] = useState('today'); const [settings, setSettings] = useState(false); const [error, setError] = useState(''); const [toast, setToast] = useState(''); const [pending, setPending] = useState(0); const [online, setOnline] = useState(navigator.onLine); const [optimistic, setOptimistic] = useState<SavedRecord[]>([]);
-  const workspace = useQuery({ queryKey: ['workspace', user.id], queryFn: () => readCached<Workspace>(user.id, 'workspace', () => api('/workspace')) });
-  const records = useQuery({ queryKey: ['records', user.id], queryFn: () => readCached<{ items: SavedRecord[]; nextCursor: string | null }>(user.id, 'records', () => api('/records?limit=100')) });
+  const workspace = useQuery({ queryKey: ['workspace', user.id], networkMode: 'always', queryFn: () => readCached<Workspace>(user.id, 'workspace', () => api('/workspace')) });
+  const records = useQuery({ queryKey: ['records', user.id], networkMode: 'always', queryFn: () => readCached<{ items: SavedRecord[]; nextCursor: string | null }>(user.id, 'records', () => api('/records?limit=100')) });
   const ws = workspace.data;
   const reload = useCallback(async () => { await client.invalidateQueries({ queryKey: ['records', user.id] }); await client.invalidateQueries({ queryKey: ['workspace', user.id] }); }, [client, user.id]);
   const sync = useCallback(async () => {
@@ -59,10 +66,13 @@ function WorkspaceApp({ user, onSignOut }: { user: User; onSignOut(): void }) {
     setPending(queue.length);
   }, [user.id, reload]);
   useEffect(() => {
-    const update = () => { setOnline(navigator.onLine); void sync(); };
+    let connected = navigator.onLine;
+    const update = () => { connected = navigator.onLine; setOnline(connected); void sync(); };
     window.addEventListener('online', update); window.addEventListener('offline', update);
+    // Some browsers miss a connectivity event after restoring an offline page.
+    const timer = window.setInterval(() => { if (navigator.onLine !== connected) update(); }, 2000);
     void sync();
-    return () => { window.removeEventListener('online', update); window.removeEventListener('offline', update); };
+    return () => { window.clearInterval(timer); window.removeEventListener('online', update); window.removeEventListener('offline', update); };
   }, [sync]);
   useEffect(() => { const theme = ws?.preferences.theme ?? 'system'; const mq = matchMedia('(prefers-color-scheme: dark)'); const apply = () => document.documentElement.dataset.theme = theme === 'system' ? (mq.matches ? 'dark' : 'light') : theme; apply(); mq.addEventListener('change', apply); return () => mq.removeEventListener('change', apply); }, [ws?.preferences.theme]);
   const saveRecord = async (kind: Operation['kind'], data: any, existing?: SavedRecord) => {

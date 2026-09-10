@@ -51,6 +51,16 @@ test('verified account, custom routine, logging, scenario comparison and respons
   await page.screenshot({ path: `.local/plotter-${info.project.name}.png`, fullPage: true });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   expect(errors).toEqual([]);
+  if (info.project.name.startsWith('production-')) {
+    await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+    await expect.poll(() => page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
+    const cached = await page.evaluate(async () => {
+      const keys = await caches.keys();
+      return (await Promise.all(keys.map(async key => (await (await caches.open(key)).keys()).map(request => new URL(request.url).pathname)))).flat();
+    });
+    expect(cached.some(path => path.startsWith('/api/'))).toBe(false);
+    expect(cached.some(path => path.includes('simulation.worker'))).toBe(true);
+  }
   await context.setOffline(true);
   await page.getByRole('button', { name: 'Today', exact: true }).click();
   await page.getByRole('button', { name: 'Log an entry', exact: true }).click();
@@ -62,7 +72,31 @@ test('verified account, custom routine, logging, scenario comparison and respons
   await page.getByRole('button', { name: 'Close', exact: true }).click();
   await page.getByRole('button', { name: 'History', exact: true }).click();
   await expect(page.getByText('15 mg · taken')).toBeVisible();
+  expect(await page.evaluate(() => navigator.onLine)).toBe(false);
+  if (info.project.name.startsWith('production-')) {
+    if (info.project.name.includes('chromium')) {
+      await page.close();
+      page = await context.newPage();
+      await page.goto('/');
+    } else {
+      // Reopening a new offline tab is tracked separately for Firefox/WebKit.
+      test.fail(process.platform === 'win32' && info.project.name === 'production-webkit', 'Windows WebKit offline reload currently reports an internal error; offline release gate remains open.');
+      await page.reload();
+    }
+    await expect(page.getByRole('heading', { name: 'Today', exact: true })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Review 1 pending changes', exact: true })).toBeVisible();
+    await page.getByRole('button', { name: 'History', exact: true }).click();
+    await expect(page.getByText('15 mg · taken')).toBeVisible();
+    await page.reload();
+    await expect(page.getByRole('heading', { name: 'Today', exact: true })).toBeVisible();
+    await page.getByRole('button', { name: 'Plotter', exact: true }).click();
+    await expect(page.getByRole('button', { name: 'Add scenario', exact: true })).toBeVisible();
+    await page.getByRole('button', { name: 'History', exact: true }).click();
+  }
   await context.setOffline(false);
+  await expect.poll(() => page.evaluate(() => navigator.onLine)).toBe(true);
   await expect(page.getByRole('button', { name: 'Review 1 pending changes', exact: true })).toHaveCount(0);
   await expect(page.getByText('15 mg · taken')).toBeVisible();
+  const saved = await page.evaluate(async () => (await (await fetch('/api/v1/records?limit=100')).json()).items);
+  expect(saved.filter((record: any) => record.kind === 'administration' && record.data.amount.value === 15)).toHaveLength(1);
 });
