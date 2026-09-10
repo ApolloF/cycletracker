@@ -122,7 +122,8 @@ export async function buildApp(db: Database, options: { testSession?: (headers: 
     return result;
   }
   app.post('/api/v1/sync', async req => {
-    const body = z.object({ operations: z.array(operationSchema).min(1).max(100) }).parse(req.body);
+    const body = z.object({ owner: z.string().optional(), operations: z.array(operationSchema).min(1).max(100) }).parse(req.body);
+    if (body.owner && body.owner !== ownerOf(req)) fail(409, 'Account changed; pending changes were not saved');
     const results = [];
     for (const op of body.operations) {
       try { results.push({ operationId: op.operationId, ok: true, record: await db.transaction(tx => saveOperation(tx, ownerOf(req), op)) }); }

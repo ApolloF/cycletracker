@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { readdir, readFile } from 'node:fs/promises';
-test('verified account, custom routine, logging, scenario comparison and responsive layout', async ({ page }, info) => {
+test('verified account, custom routine, logging, scenario comparison and responsive layout', async ({ page, context }, info) => {
   const email = `synthetic-${Date.now()}-${info.project.name}@example.test`;
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await page.goto('/');
@@ -51,4 +51,18 @@ test('verified account, custom routine, logging, scenario comparison and respons
   await page.screenshot({ path: `.local/plotter-${info.project.name}.png`, fullPage: true });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
   expect(errors).toEqual([]);
+  await context.setOffline(true);
+  await page.getByRole('button', { name: 'Today', exact: true }).click();
+  await page.getByRole('button', { name: 'Log an entry', exact: true }).click();
+  await page.getByLabel('Actual amount (mg)').fill('15');
+  await page.getByRole('button', { name: 'Save administration' }).click();
+  await page.getByRole('button', { name: 'Review 1 pending changes', exact: true }).click();
+  await expect(page.getByRole('dialog').getByRole('heading', { name: 'Synthetic supplement' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Export pending changes' })).toBeVisible();
+  await page.getByRole('button', { name: 'Close', exact: true }).click();
+  await page.getByRole('button', { name: 'History', exact: true }).click();
+  await expect(page.getByText('15 mg · taken')).toBeVisible();
+  await context.setOffline(false);
+  await expect(page.getByRole('button', { name: 'Review 1 pending changes', exact: true })).toHaveCount(0);
+  await expect(page.getByText('15 mg · taken')).toBeVisible();
 });

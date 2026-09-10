@@ -4,7 +4,8 @@ import { Activity, CalendarDays, ChartNoAxesCombined, Check, CheckCircle2, Chevr
 import { Temporal } from '@js-temporal/polyfill';
 import { administrationSchema, convert, emptyProtocol, occurrences, phaseSchema, preferencesSchema, supplies, type Entry, type Occurrence, type Operation, type Phase } from '../../../packages/domain/src/index.js';
 import { catalog } from '../../../packages/domain/src/catalog.js';
-import { api, post, local, readCached, enqueue, synchronize, download, type Workspace, type SavedRecord } from './api.js';
+import { api, post, local, readCached, enqueue, synchronize, pendingChanges, download, type Workspace, type SavedRecord } from './api.js';
+import { PendingChanges } from './PendingChanges.js';
 import { Empty, Field, Sheet, formatDate, formatTime } from './ui.js';
 import { EntryEditor } from './EntryEditor.js';
 import { HealthEditor } from './HealthEditor.js';
@@ -45,13 +46,24 @@ export default function App() {
 }
 
 function WorkspaceApp({ user, onSignOut }: { user: User; onSignOut(): void }) {
+  const [showPending, setShowPending] = useState(false);
   const client = useQueryClient(); const [tab, setTab] = useState('today'); const [settings, setSettings] = useState(false); const [error, setError] = useState(''); const [toast, setToast] = useState(''); const [pending, setPending] = useState(0); const [online, setOnline] = useState(navigator.onLine); const [optimistic, setOptimistic] = useState<SavedRecord[]>([]);
   const workspace = useQuery({ queryKey: ['workspace', user.id], queryFn: () => readCached<Workspace>(user.id, 'workspace', () => api('/workspace')) });
   const records = useQuery({ queryKey: ['records', user.id], queryFn: () => readCached<{ items: SavedRecord[]; nextCursor: string | null }>(user.id, 'records', () => api('/records?limit=100')) });
   const ws = workspace.data;
   const reload = useCallback(async () => { await client.invalidateQueries({ queryKey: ['records', user.id] }); await client.invalidateQueries({ queryKey: ['workspace', user.id] }); }, [client, user.id]);
-  const sync = useCallback(async () => { try { await synchronize(user.id); setOptimistic([]); await reload(); } catch (e: any) { setError(e.message); } setPending(await local.queue.where('owner').equals(user.id).count()); }, [user.id, reload]);
-  useEffect(() => { const update = () => { setOnline(navigator.onLine); if (navigator.onLine) void sync(); }; window.addEventListener('online', update); window.addEventListener('offline', update); void local.queue.where('owner').equals(user.id).toArray().then(q => { setPending(q.length); setOptimistic(q.map(x => ({ id: x.operation.id, kind: x.operation.kind, data: x.operation.data, version: x.operation.expectedVersion + 1, eventAt: (x.operation.data as any).at ?? new Date().toISOString(), pending: true }))); if (navigator.onLine) void sync(); }); return () => { window.removeEventListener('online', update); window.removeEventListener('offline', update); }; }, [sync, user.id]);
+  const sync = useCallback(async () => {
+    try { await synchronize(user.id); if (navigator.onLine) await reload(); } catch (e: any) { setError(e.message); }
+    const queue = await pendingChanges(user.id);
+    setOptimistic(queue.slice().reverse().filter((row, i, rows) => rows.findIndex(other => other.operation.id === row.operation.id) === i).map(x => ({ id: x.operation.id, kind: x.operation.kind, data: x.operation.data, version: x.operation.expectedVersion + 1, eventAt: (x.operation.data as any).at ?? new Date().toISOString(), pending: true })));
+    setPending(queue.length);
+  }, [user.id, reload]);
+  useEffect(() => {
+    const update = () => { setOnline(navigator.onLine); void sync(); };
+    window.addEventListener('online', update); window.addEventListener('offline', update);
+    void sync();
+    return () => { window.removeEventListener('online', update); window.removeEventListener('offline', update); };
+  }, [sync]);
   useEffect(() => { const theme = ws?.preferences.theme ?? 'system'; const mq = matchMedia('(prefers-color-scheme: dark)'); const apply = () => document.documentElement.dataset.theme = theme === 'system' ? (mq.matches ? 'dark' : 'light') : theme; apply(); mq.addEventListener('change', apply); return () => mq.removeEventListener('change', apply); }, [ws?.preferences.theme]);
   const saveRecord = async (kind: Operation['kind'], data: any, existing?: SavedRecord) => {
     const operation: Operation = { id: existing?.id ?? newId(), operationId: newId(), kind, expectedVersion: existing?.version ?? 0, data };
@@ -61,8 +73,9 @@ function WorkspaceApp({ user, onSignOut }: { user: User; onSignOut(): void }) {
   const saveWorkspace = async (patch: Partial<Workspace>) => { const next = await post<Workspace>('/workspace', { ...patch, expectedVersion: ws!.version }, 'PUT'); client.setQueryData(['workspace', user.id], next); await local.cache.put({ key: `${user.id}:workspace`, owner: user.id, value: next }); };
   const allRecords = [...optimistic, ...(records.data?.items ?? []).filter(x => !optimistic.some(o => o.id === x.id))];
   const signOut = async () => {
+    if (!navigator.onLine) { setError('Connect to sign out and revoke this session.'); return; }
     if (pending && !confirm('There are unsynced changes. Signing out will discard them from this device. Continue?')) return;
-    try { await post('/api/auth/sign-out', {}); } catch { if (navigator.onLine) { setError('Sign-out failed. Try again.'); return; } }
+    try { await post('/api/auth/sign-out', {}); } catch { setError('Sign-out failed. Try again.'); return; }
     await local.cache.where('owner').equals(user.id).delete(); await local.queue.where('owner').equals(user.id).delete(); localStorage.removeItem('cycletracker-active-user'); client.clear(); onSignOut();
   };
   if (!ws) return <div className="loading">{workspace.error ? <><p>{workspace.error.message}</p><button onClick={() => void workspace.refetch()}>Retry</button><button onClick={signOut}>Sign out</button></> : 'Loading your routine…'}</div>;
@@ -70,7 +83,7 @@ function WorkspaceApp({ user, onSignOut }: { user: User; onSignOut(): void }) {
   const shared = { user, ws, records: allRecords, saveRecord, saveWorkspace, reload, setError, setToast };
   return <div className="app"><aside className="sidebar"><a className="brand" href="/"><Activity size={26}/> CycleTracker</a><nav aria-label="Main navigation">{tabs.filter(t => t.id !== 'health' || ws.preferences.healthEnabled).map(t => <button key={t.id} className={tab === t.id ? 'active' : ''} onClick={() => setTab(t.id)}><t.icon size={19}/><span>{t.label}</span>{tab === t.id && <span className="active-dot"/>}</button>)}</nav><div className="sidebar-bottom"><button className="profile" onClick={() => setSettings(true)}><span className="avatar">{user.name.slice(0, 1).toUpperCase()}</span><span>{user.name}</span><Settings size={17}/></button></div></aside>
     <div className="main-wrap"><header className="topbar"><span className="breadcrumb">Workspace <ChevronRight size={13}/> {tabs.find(t => t.id === tab)?.label}</span><div className="row"><span className="sync-status">{!online ? <><WifiOff size={14}/> Offline</> : pending ? <button className="text-button" onClick={() => void sync()}>{pending} pending · Retry sync</button> : <><span className="status-dot"/> All changes saved</>}</span><button className="icon-button mobile-settings" aria-label="Settings" onClick={() => setSettings(true)}><Settings size={20}/></button></div></header>
-    <main className="main">{error && <div className="error-banner" role="alert">{error}<button className="text-button" onClick={() => setError('')}>Dismiss</button></div>}{records.error && <div className="error-banner">{records.error.message}<button onClick={() => void records.refetch()}>Retry history</button></div>}
+    <main className="main">{pending > 0 && <button onClick={() => setShowPending(true)}>Review {pending} pending changes</button>}{error && <div className="error-banner" role="alert">{error}<button className="text-button" onClick={() => setError('')}>Dismiss</button></div>}{records.error && <div className="error-banner">{records.error.message}<button onClick={() => void records.refetch()}>Retry history</button></div>}
       {!ws.preferences.onboardingComplete && <Onboarding ws={ws} save={saveWorkspace}/>}
       {tab === 'today' && <Today {...shared} active={active} goPlan={() => setTab('plan')}/>}
       {tab === 'plan' && <Plan {...shared}/>}
@@ -79,6 +92,7 @@ function WorkspaceApp({ user, onSignOut }: { user: User; onSignOut(): void }) {
       {tab === 'health' && <Health {...shared}/>}
     </main></div>
     {toast && <div className="toast" role="status"><CheckCircle2 size={18}/>{toast}<button className="text-button" onClick={() => setToast('')}>Dismiss</button></div>}
+    <Sheet open={showPending} onClose={() => setShowPending(false)} title="Pending changes" description="Changes saved on this device that have not reached the server."><PendingChanges owner={user.id} sync={sync}/></Sheet>
     <Sheet open={settings} onClose={() => setSettings(false)} title="Your workspace" description="Preferences, account access and your data."><SettingsPanel {...shared} signOut={signOut}/></Sheet>
   </div>;
 }

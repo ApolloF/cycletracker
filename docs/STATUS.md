@@ -1,6 +1,15 @@
-# Implementation status — 9 September 2026
+# Implementation status — 10 September 2026
 
 This is the first development increment. The original four-milestone plan is **not complete**, and public-release gates have not passed.
+
+## 10 September: pending changes
+
+- Pending operations now have transactional insertion order, instead of UUID order. Existing queues are migrated by record revision because their original insertion times were not saved.
+- Sync drains edits added while a request is in flight and serializes work per account, including across tabs where Web Locks are available. The API checks the queued owner against the current session before any write.
+- Offline drafts remain visible. Pending changes can be inspected, exported or retried. A failed record's local edits can be explicitly discarded together; unrelated drafts and server records remain unchanged.
+- Offline sign-out now requires reconnection so the server session can actually be revoked. A deferred offline logout flow remains future work.
+- Build/typecheck and 20 domain/API/import test executions passed. Twelve browser checks passed across Chromium, Firefox, WebKit and mobile Chromium, covering revision ordering after reload, conflicts, in-flight additions, account isolation, selective discard, and offline logging/reconnection in the running app.
+- WebKit's earlier sync error did not recur in two full runs. This does not establish production offline restart, multi-device correctness, or real-device Safari support.
 
 ## Implemented
 
@@ -31,7 +40,7 @@ This is the first development increment. The original four-milestone plan is **n
 | SciPy reference | Passed, four synthetic cases | 3,040 samples per case; maximum absolute error below 9e-12 mg/L; numerical correctness only |
 | Desktop Chromium | Passed | Registration, verification, onboarding, custom item, activation, logging, reload, two plot scenarios and overflow check |
 | Firefox | Passed | Same workflow |
-| WebKit | Final run failed | Workflow reached the chart, but the page-error assertion caught a sync access-control error. Earlier run passed; investigate this intermittent failure before release. Not a real iPhone test |
+| WebKit | Passed on 10 September | Workflow and queue regressions; earlier sync error did not recur in two full runs. Not a real iPhone test |
 | Mobile Chromium | Passed | Final run, Pixel 7 emulation; not a real Android device test |
 | Docker engine | Unavailable | Compose services have not started locally |
 | Embedded database persistence | Passed | Synthetic data survived close/reopen; a second open was rejected by the process lock. Earlier interrupted synthetic database files remain retained |
@@ -40,8 +49,8 @@ The existing `.local/postgres` directory contains retained interrupted test data
 
 ## Next development tasks, in order
 
-1. **Complete foundation verification.** Diagnose the intermittent WebKit sync access-control error observed during the final run. Extend persistence checks to startup failure paths and separate processes. Ensure failure paths release process locks. Expand browser coverage beyond the basic workflow. Replace duplicate test registration with a standalone fixture module.
-2. **Verify offline behavior.** Test the production service worker, reload/restart while offline, ordered create/edit/undo, duplicate completions, two tabs/devices, conflicts and account switching. Fix deferred logout/session revocation and stale optimistic state. Provide explicit conflict resolution and pending-change export.
+1. **Complete foundation verification.** Continue WebKit regression coverage. Extend persistence checks to startup failure paths and separate processes. Ensure failure paths release process locks. Replace duplicate test registration with a standalone fixture module.
+2. **Verify offline behavior.** Test the production service worker, cold reload/restart while offline, duplicate completions, two tabs/devices and account switching. Cached queries must be allowed to run offline during startup. Add a deferred logout flow and field-by-field conflict comparison/reapplication. Queue ordering, draft export and explicit discard are implemented; full offline release gates remain open.
 3. **Complete migration.** Map the original export's actual `created_at` and nested `data` fields; preserve symptom values, BP, notes, lab panels and protocol settings. Handle multiple source profiles without source-ID collisions. Make phase-import retries idempotent. Verify record counts, timestamps and attachments against synthetic legacy fixtures. Do not convert checklist-only entries to known doses.
 4. **Finish planning workflows.** Add weekly navigation and print layout, planned-phase previews, readable recurrence labels, dose-basis conveniences, pill/package controls, injection-site rotation, quick-action ordering and durable drafts across navigation/restarts. Verify treatment of earlier schedule versions after active-plan edits.
 5. **Finish health and history.** Add server-side date/type/search filters, paginated health data, irregular-time-aware trends, panel comparison, explicit unit presentation, attachment cleanup/replacement and edit-history UI. A 100-record cache is not complete historical coverage.
